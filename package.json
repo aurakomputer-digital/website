@@ -1,0 +1,23 @@
+{
+  "name": "eleventy-tailwind-starter",
+  "version": "2.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rm -rf _site",
+    "serve:eleventy": "npx @11ty/eleventy --serve",
+    "serve": "bun run clean && bun run serve:eleventy",
+    "build:eleventy": "npx @11ty/eleventy",
+    "build": "bun run clean && bun run build:eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-navigation": "^1.0.5",
+    "tailwindcss": "^4.3.0"
+  },
+  "dependencies": {
+    "eleventy-plugin-tailwindcss-4": "^3.0.0"
+  }
+}
