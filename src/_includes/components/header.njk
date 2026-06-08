@@ -1,0 +1,93 @@
+{% set navPages = collections.all | eleventyNavigation %}
+<header
+      id="navbar"
+      class="sicky top-0 inset-x-0 z-50 backdrop-blur-md bg-white/70 border-b border-slate-200/60"
+    >
+      <nav
+        class="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between"
+      >
+        <a href="/" class="flex items-center gap-2">
+          <img src="/img/logo.webp" alt="logo" class="h-10" />
+        </a>
+
+        <ul
+          class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-700"
+        >
+          {% for entry in navPages %}
+          <li><a href="{{ entry.url }}" class="nav-link {% if (entry.url in page.url and entry.url != '/') or (page.url == '/' and entry.url == '/')  %}
+            active
+          {% else %}
+
+          {% endif %}">{{ entry.title }}</a></li>
+          {% endfor %}
+        </ul>
+
+        <div class="flex items-center gap-3">
+          <a
+            href="#kontak"
+            class="hidden sm:inline-flex btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full"
+          >
+            Konsultasi Gratis
+          </a>
+          <button
+            id="menuToggle"
+            aria-label="Menu"
+            class="lg:hidden p-2 rounded-lg border border-slate-200 hover:bg-slate-50"
+          >
+            <svg
+              id="iconOpen"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+            <svg
+              id="iconClose"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="hidden"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="lg:hidden hidden border-t border-slate-200/60 bg-white"
+      >
+        <ul class="px-5 py-4 flex flex-col gap-4 text-sm font-medium">
+          {% for entry in navPages %}
+
+          <li><a href="{{ entry.url }}" class="block py-1">{{ entry.title }}</a></li>
+          {% endfor %}
+
+          <li>
+            <a
+              href="#kontak"
+              class="btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full inline-block text-center"
+              >Konsultasi Gratis</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>

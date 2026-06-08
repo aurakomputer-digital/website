@@ -18,6 +18,7 @@
     "tailwindcss": "^4.3.0"
   },
   "dependencies": {
+    "@11ty/font-awesome": "^1.0.1",
     "eleventy-plugin-tailwindcss-4": "^3.0.0"
   }
 }
