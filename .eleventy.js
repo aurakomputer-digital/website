@@ -1,17 +1,28 @@
-import tailwindcss from "eleventy-plugin-tailwindcss-4";
-import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import eleventyVitePlugin from "@11ty/eleventy-plugin-vite";
+import tailwindcss from "@tailwindcss/vite";
 import { DateTime } from "luxon";
 import fontAwesomePlugin from "@11ty/font-awesome";
-export default function (eleventyConfig) {
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  eleventyConfig.addPassthroughCopy("src/img");
 
-  eleventyConfig.addPlugin(tailwindcss, {
-    input: "styles/main.css",
-    output: "assets/main.css",
-  });
+export default function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("src/assets/css/main.css");
+  eleventyConfig.addPassthroughCopy("src/assets/js/scripts.js");
 
   eleventyConfig.addPlugin(fontAwesomePlugin);
+
+  eleventyConfig.addPlugin(eleventyVitePlugin, {
+    viteOptions: {
+      plugins: [tailwindcss()],
+      build: {
+        rollupOptions: {
+          input: {
+            main: "src/assets/css/main.css",
+            scripts: "src/assets/js/scripts.js",
+          },
+        },
+      },
+    },
+  });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {

@@ -1,0 +1,24 @@
+{
+  "header": [
+    {
+      "title": "Beranda",
+      "url": "/"
+    },
+    {
+      "title": "Projek",
+      "url": "/projek"
+    },
+    {
+      "title": "Produk",
+      "url": "/produk"
+    },
+    {
+      "title": "Tentang Kami",
+      "url": "/tentang"
+    },
+    {
+      "title": "Blog",
+      "url": "/blog"
+    }
+  ]
+}

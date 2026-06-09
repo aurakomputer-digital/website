@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rm -rf _site",
     "serve:eleventy": "npx @11ty/eleventy --serve",
-    "serve": "bun run clean && bun run serve:eleventy",
+    "dev": "bun run clean && bun --bun run serve:eleventy",
     "build:eleventy": "npx @11ty/eleventy",
     "build": "bun run clean && bun run build:eleventy"
   },
@@ -14,11 +14,10 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
-    "@11ty/eleventy-navigation": "^1.0.5",
-    "tailwindcss": "^4.3.0"
-  },
-  "dependencies": {
+    "tailwindcss": "4",
     "@11ty/font-awesome": "^1.0.1",
-    "eleventy-plugin-tailwindcss-4": "^3.0.0"
-  }
+    "@11ty/eleventy-plugin-vite": "^8.0.0-alpha.2",
+    "@tailwindcss/vite": "4"
+  },
+  "dependencies": {}
 }
