@@ -1,0 +1,86 @@
+[
+  {
+    "name": "SMAN 1 Banyumas",
+    "logo": "/img/clients/sman1-banyumas.png",
+    "category": "Pendidikan",
+    "website": "https://sman1banyumas.sch.id",
+    "description": "Sistem Informasi Sekolah & PPDB Online"
+  },
+  {
+    "name": "Toko Berkah Jaya",
+    "logo": "/img/clients/berkah-jaya.png",
+    "category": "UMKM",
+    "website": "https://berkahjaya.com",
+    "description": "Aplikasi Kasir & Manajemen Stok"
+  },
+  {
+    "name": "Dinas Pendidikan Kabupaten Banyumas",
+    "logo": "/img/clients/dinas-pendidikan.png",
+    "category": "Instansi",
+    "website": "https://disdik.banyumaskab.go.id",
+    "description": "Dashboard Monitoring & Evaluasi"
+  },
+  {
+    "name": "PT. Maju Bersama",
+    "logo": "/img/clients/maju-bersama.png",
+    "category": "Korporat",
+    "website": "https://majubersama.co.id",
+    "description": "Sistem ERP & HR Management"
+  },
+  {
+    "name": "SMP N 2 Purwokerto",
+    "logo": "/img/clients/smpn2-pwt.png",
+    "category": "Pendidikan",
+    "website": "https://smpn2purwokerto.sch.id",
+    "description": "E-Learning & Absensi Digital"
+  },
+  {
+    "name": "Warung Makan Sederhana",
+    "logo": "/img/clients/wm-sederhana.png",
+    "category": "UMKM",
+    "website": "https://wmsederhana.id",
+    "description": "Sistem Order & Kasir Digital"
+  },
+  {
+    "name": "Badan Kepegawaian Daerah",
+    "logo": "/img/clients/bkd.png",
+    "category": "Instansi",
+    "website": "https://bkd.banyumaskab.go.id",
+    "description": "Sistem Informasi Kepegawaian"
+  },
+  {
+    "name": "CV. Karya Mandiri",
+    "logo": "/img/clients/karya-mandiri.png",
+    "category": "Korporat",
+    "website": "https://karyamandiri.com",
+    "description": "Aplikasi Manajemen Proyek"
+  },
+  {
+    "name": "SD N 1 Sokaraja",
+    "logo": "/img/clients/sdn1-sokaraja.png",
+    "category": "Pendidikan",
+    "website": "https://sdn1sokaraja.sch.id",
+    "description": "Portal Orang Tua & Siswa"
+  },
+  {
+    "name": "Batik Kenanga",
+    "logo": "/img/clients/batik-kenanga.png",
+    "category": "UMKM",
+    "website": "https://batikkenanga.com",
+    "description": "E-Commerce & Inventory System"
+  },
+  {
+    "name": "Dinas Kesehatan",
+    "logo": "/img/clients/dinkes.png",
+    "category": "Instansi",
+    "website": "https://dinkes.banyumaskab.go.id",
+    "description": "Sistem Pelaporan Kesehatan"
+  },
+  {
+    "name": "PT. Graha Konstruksi",
+    "logo": "/img/clients/graha-konstruksi.png",
+    "category": "Korporat",
+    "website": "https://grahakontruksi.co.id",
+    "description": "Aplikasi Tracking Proyek"
+  }
+]
