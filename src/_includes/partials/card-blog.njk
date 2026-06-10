@@ -1,0 +1,45 @@
+{% set headingLevel = headingLevel | default("h2") %}
+{% set definedDate = definedDate | default(item.date) %}
+{% set showTags = showTags | default(true) %}
+
+<!-- Card Container (Semantic Article dengan efek hover) -->
+<article class="group relative block bg-white rounded-2xl border border-slate-200 p-6 transition-all duration-300 hover:shadow-lg hover:border-brand-300 hover:-translate-y-1">
+
+  <!-- Headline / Judul -->
+  <{{ headingLevel }} class="text-xl font-bold text-ink mb-3 group-hover:text-brand-600 transition-colors">
+    <a href="{{ item.url | url }}" class="focus:outline-none focus:underline decoration-2 decoration-brand-500 underline-offset-4">
+      {{ item.data.title }}
+    </a>
+  </{{ headingLevel }}>
+
+  <!-- Date & Draft Badge -->
+  <div class="flex flex-wrap items-center gap-2 text-sm text-slate-500 mb-4">
+    {% if item.data.draft %}
+      <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200">
+        Draft
+      </span>
+    {% endif %}
+
+    <time datetime="{{ definedDate }}">
+    </time>
+  </div>
+
+  <!-- Tags -->
+  {% if showTags and item.data.tags and item.data.tags.length > 1 %}
+    <div class="flex flex-wrap gap-2 mb-5">
+      {% for tag in item.data.tags %}
+        {% if tag != "posts" %}
+          <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200 group-hover:bg-brand-50 group-hover:text-brand-700 group-hover:border-brand-200 transition-colors">
+            #{{ tag }}
+          </span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <!-- Content / Description -->
+  <div class="text-slate-600 leading-relaxed text-sm sm:text-base line-clamp-3">
+    {{ item.data.description | safe }}
+  </div>
+
+</article>

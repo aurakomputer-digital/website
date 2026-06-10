@@ -1,0 +1,4 @@
+{
+  js: ["https://cdn.jsdelivr.net/npm/kk-whatsapp-widget@latest/dist/index.umd.js"],
+  css: ["https://cdn.jsdelivr.net/npm/kk-whatsapp-widget/dist/style.css"],
+}

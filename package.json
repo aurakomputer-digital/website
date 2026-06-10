@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "",
   "scripts": {
-    "clean": "rm -rf _site",
+    "clean": "rm -rf dist",
     "serve:eleventy": "npx @11ty/eleventy --serve",
     "dev": "bun run clean && bun --bun run serve:eleventy",
     "build:eleventy": "npx @11ty/eleventy",
