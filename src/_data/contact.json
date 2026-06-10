@@ -1,5 +1,11 @@
 {
-  "whatsapp": "6285161748582",
+  "name": "Aura Komputer",
+  "address": "Jl. Kasegeran Rt. 9 / Rw. 2, Kasegeran, Cilongok, Banyumas, Jawa Tengah 53162",
+  "phone_number": "+62 851-6174-8582",
+  "whatsapp": {
+    "link": "https://wa.me/6285161748582"
+  },
+  "email": "aura.komputer.office@gmail.com",
   "items": [
     {
       "name": "WhatssApp",

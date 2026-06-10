@@ -20,5 +20,19 @@
       "title": "Blog",
       "url": "/blog"
     }
+  ],
+  "footer": [
+    {
+      "title": "Kontak",
+      "url": "/kontak"
+    },
+    {
+      "title": "Kebijakan Privasi",
+      "url": "/kebijakan-privasi"
+    },
+    {
+      "title": "Syarat & Ketentuan",
+      "url": "/syarat-ketentuan"
+    }
   ]
 }

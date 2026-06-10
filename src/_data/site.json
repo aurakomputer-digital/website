@@ -1,0 +1,124 @@
+{
+  "title": "Aura Komputer Digital",
+  "tagline": "Mitra Digital dari lokal ke nasional",
+  "states": [
+    {
+      "title": "Proyek Selesai",
+      "value": "50+"
+    },
+    {
+      "title": "Klient Puas",
+      "value": "10+"
+    },
+    {
+      "title": "Tahun Pengalaman",
+      "value": "6+"
+    },
+    {
+      "title": "Dukungan Teknis",
+      "value": "25/7"
+    }
+  ],
+  "features": [
+    {
+      "title": "Quality Drive",
+      "icon": "fa-solid fa-award",
+      "color": "from-amber-400 to-orange-600",
+      "shadow": "shadow-amber-500/30",
+      "content": "Kami berkomitmen memberikan kualitas terbaik dengan standar industri internasional untuk setiap proyek yang kami kerjakan.",
+      "shortDesc": "Kualitas premium di setiap baris kode.",
+      "highlight": {
+        "number": "100%",
+        "label": "Quality Assurance"
+      },
+      "tags": ["ISO Standard", "Code Review", "Testing Otomatis"],
+      "cta": "Lihat Portfolio Kami",
+      "link": "/portofolio"
+    },
+    {
+      "title": "Customer Focus",
+      "icon": "fa-solid fa-handshake",
+      "color": "from-emerald-400 to-teal-600",
+      "shadow": "shadow-emerald-500/30",
+      "content": "Kepuasan klien adalah prioritas utama. Kami mendengarkan, memahami, dan mewujudkan visi digital Anda menjadi kenyataan.",
+      "shortDesc": "Mendengar kebutuhan, mewujudkan solusi.",
+      "highlight": {
+        "number": "98%",
+        "label": "Klien Puas"
+      },
+      "tags": ["Konsultasi Gratis", "Revisi Fleksibel", "Support Prioritas"],
+      "cta": "Konsultasi Sekarang",
+      "link": "#kontak"
+    },
+    {
+      "title": "Level Up",
+      "icon": "fa-solid fa-rocket",
+      "color": "from-fuchsia-500 to-purple-700",
+      "shadow": "shadow-fuchsia-500/30",
+      "content": "Kami terus berkembang dan berinovasi mengikuti tren teknologi terbaru agar bisnis Anda selalu selangkah lebih maju di era digital.",
+      "shortDesc": "Inovasi tanpa henti untuk kemajuan Anda.",
+      "highlight": {
+        "number": "20+",
+        "label": "Teknologi Dikuasai"
+      },
+      "tags": ["Modern Stack"],
+      "cta": "Pelajari Teknologi Kami",
+      "link": "/teknologi"
+    },
+    {
+      "title": "Teknologi Mutakhir",
+      "icon": "fa-solid fa-microchip",
+      "color": "from-brand-500 to-indigo-700",
+      "shadow": "shadow-brand-500/30",
+      "content": "Menggunakan stack teknologi terkini seperti React, Next.js, Laravel, Flutter, dan Node.js untuk performa maksimal dan skalabilitas tinggi.",
+      "shortDesc": "Stack modern, performa maksimal.",
+      "highlight": {
+        "number": "20+",
+        "label": "Framework & Tools"
+      },
+      "tags": ["React", "Laravel", "Flutter", "Node.js"],
+      "cta": "Lihat Tech Stack",
+      "link": "/teknologi"
+    },
+    {
+      "title": "Support 24/7",
+      "icon": "fa-solid fa-headset",
+      "color": "from-cyan-500 to-sky-700",
+      "shadow": "shadow-cyan-500/30",
+      "content": "Tim support kami siap membantu kapan saja. Mulai dari maintenance, troubleshooting, hingga pengembangan fitur baru pasca-launching.",
+      "shortDesc": "Selalu ada saat Anda membutuhkan.",
+      "highlight": {
+        "number": "24/7",
+        "label": "Dukungan Teknis"
+      },
+      "tags": ["Fast Response", "Remote Support", "On-Site Visit"],
+      "cta": "Hubungi Support",
+      "link": "#kontak"
+    },
+    {
+      "title": "Harga Terjangkau",
+      "icon": "fa-solid fa-tags",
+      "color": "from-rose-400 to-pink-600",
+      "shadow": "shadow-rose-500/30",
+      "content": "Solusi digital berkualitas tidak harus mahal. Kami menawarkan paket fleksibel yang dapat disesuaikan dengan budget UMKM hingga korporasi.",
+      "shortDesc": "Kualitas terbaik, harga bersahabat.",
+      "highlight": {
+        "number": "4x",
+        "label": "Lebih Hemat"
+      },
+      "tags": ["Paket UMKM", "Cicilan Tersedia", "Tanpa Biaya Tersembunyi"],
+      "cta": "Konsultasi Sekarang",
+      "link": "#kontak"
+    },
+    {
+      "title": "Keamanan Terjamin",
+      "icon": "fa-solid fa-shield-halved",
+      "color": "from-slate-600 to-slate-900",
+      "shadow": "shadow-slate-500/30",
+      "content": "Data Anda aman di tangan kami. Kami menerapkan standar keamanan enkripsi SSL, backup rutin, dan proteksi dari ancaman siber.",
+      "shortDesc": "Data aman, bisnis tenang.",
+      "tags": ["SSL/TLS", "Daily Backup", "GDPR Ready"],
+      "cta": "Pelajari Keamanan"
+    }
+  ]
+}

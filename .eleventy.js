@@ -4,7 +4,7 @@ import { DateTime } from "luxon";
 import fontAwesomePlugin from "@11ty/font-awesome";
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("src/assets/img");
   eleventyConfig.addPassthroughCopy("src/assets/css/main.css");
   eleventyConfig.addPassthroughCopy("src/assets/js/scripts.js");
 
