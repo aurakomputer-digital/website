@@ -11,3 +11,27 @@ export const slugifyString = (text) => {
     .replace(/[^a-z0-9]+/g, "-") // 5. Ganti SEMUA karakter non-alfanumerik (spasi, &, !, dll) dengan '-'
     .replace(/^-+|-+$/g, ""); // 6. Hapus '-' jika kebetulan ada di paling awal atau paling akhir
 };
+
+export const groupBy = (arr, key) => {
+  if (!arr) return {};
+  return arr.reduce((acc, item) => {
+    const group = item[key] || "other";
+    if (!acc[group]) acc[group] = [];
+    acc[group].push(item);
+    return acc;
+  }, {});
+};
+
+export const filterBy = (arr, key, value) => {
+  if (!arr) return [];
+  return arr.filter((item) => item[key] === value);
+};
+
+export const sortBy = (arr, key) => {
+  if (!arr) return [];
+  return [...arr].sort((a, b) => {
+    if (a[key] < b[key]) return -1;
+    if (a[key] > b[key]) return 1;
+    return 0;
+  });
+};

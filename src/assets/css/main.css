@@ -76,6 +76,15 @@
   }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 @layer base {
   *,
   ::after,
@@ -146,14 +155,16 @@ body {
 .marquee {
   animation: marquee 28s linear infinite;
 }
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  width: max-content;
 }
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 .chip {
   background: rgba(74, 98, 245, 0.08);
   color: #2c39b8;

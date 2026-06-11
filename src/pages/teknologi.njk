@@ -1,0 +1,542 @@
+---
+layout: base
+title: Teknologi yang Kami Gunakan
+description: "Daftar bahasa pemrograman, framework, dan tools yang dikuasai oleh tim Banyumas Digital untuk membangun solusi digital terbaik."
+permalink: /teknologi/
+---
+
+<!-- HERO SECTION -->
+<section class="relative pt-32 lg:pt-40 pb-16 hero-bg overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-60 pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
+    <div class="max-w-3xl">
+      <span
+        class="chip inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full"
+      >
+        <span
+          class="w-1.5 h-1.5 rounded-full bg-brand-600 animate-pulse"
+        ></span>
+        Tech Stack Kami
+      </span>
+      <h1
+        class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink leading-tight tracking-tight"
+      >
+        Teknologi <span class="gradient-text">Mutakhir</span> untuk Solusi
+        <span class="gradient-text">Terbaik</span>
+      </h1>
+      <p class="mt-5 text-lg text-slate-600 max-w-2xl leading-relaxed">
+        Kami menggunakan stack teknologi modern yang telah terbukti handal,
+        scalable, dan aman untuk membangun aplikasi berkualitas tinggi.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER & TECH GRID -->
+<section class="py-16 sm:py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <!-- Filter Pills -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-10">
+      <div class="flex flex-wrap gap-2" id="filterContainer">
+        <button
+          data-filter="all"
+          class="filter-pill active px-5 py-2.5 rounded-full text-sm font-semibold bg-brand-600 text-white transition-all"
+        >
+          Semua
+        </button>
+        <button
+          data-filter="language"
+          class="filter-pill px-5 py-2.5 rounded-full text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all"
+        >
+          💻 Bahasa Pemrograman
+        </button>
+        <button
+          data-filter="framework"
+          class="filter-pill px-5 py-2.5 rounded-full text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all"
+        >
+          🚀 Framework & Library
+        </button>
+        <button
+          data-filter="runtime"
+          class="filter-pill px-5 py-2.5 rounded-full text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all"
+        >
+          ⚙️ Runtime & Tools
+        </button>
+        <button
+          data-filter="database"
+          class="filter-pill px-5 py-2.5 rounded-full text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all"
+        >
+          🗄️ Database
+        </button>
+      </div>
+
+      <div class="text-sm text-slate-500">
+        Menampilkan
+        <span id="techCount" class="font-bold text-ink"
+          >{{ techs | length }}</span
+        >
+        teknologi
+      </div>
+    </div>
+
+    <!-- Tech Grid -->
+    <div
+      class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      id="techGrid"
+    >
+      {% for tech in techs | sortBy("name") %}
+      <article
+        data-category="{{ tech.category }}"
+        class="tech-card card-hover reveal group relative bg-white rounded-3xl overflow-hidden border border-slate-200 hover:border-brand-300 transition-all duration-300"
+      >
+        <!-- Top Gradient Bar -->
+        <div
+          class="h-1.5 w-full"
+          style="background: linear-gradient(to right, {{ tech.color }}, {{ tech.color }}80);"
+        ></div>
+
+        <div class="p-6">
+          <!-- Header: Icon + Level Badge -->
+          <div class="flex items-start justify-between mb-4">
+            <div class="relative">
+              <div
+                class="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/{{ tech.icon }}"
+                  alt="{{ tech.name }}"
+                  class="w-10 h-10"
+                  loading="lazy"
+                  onerror="this.parentElement.innerHTML='<span class=\'text-2xl font-bold\' style=\'color:{{ tech.color }}\'>{{ tech.name[0] }}</span>';"
+                />
+              </div>
+              {% if tech.level == "expert" %}
+              <div
+                class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center shadow-md"
+                title="Expert Level"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              {% elif tech.level == "advanced" %}
+              <div
+                class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-amber-500 border-2 border-white flex items-center justify-center shadow-md"
+                title="Advanced Level"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                >
+                  <path
+                    d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8 5.8 21.3l2.4-7.4L2 9.4h7.6z"
+                  />
+                </svg>
+              </div>
+              {% endif %}
+            </div>
+
+            <!-- Category Badge -->
+            <span
+              class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full {% if tech.category == 'language' %}bg-brand-100 text-brand-700 {% elif tech.category == 'framework' %}bg-cyan-100 text-cyan-700 {% elif tech.category == 'runtime' %}bg-fuchsia-100 text-fuchsia-700 {% elif tech.category == 'database' %}bg-emerald-100 text-emerald-700 {% else %}bg-slate-100 text-slate-700{% endif %}"
+            >
+              {{ tech.category }}
+            </span>
+          </div>
+
+          <!-- Name -->
+          <h3
+            class="text-lg font-bold text-ink mb-2 group-hover:text-brand-600 transition-colors"
+          >
+            {{ tech.name }}
+          </h3>
+
+          <!-- Description -->
+          <p class="text-sm text-slate-600 line-clamp-2 leading-relaxed mb-4">
+            {{ tech.description }}
+          </p>
+
+          <!-- Features Preview -->
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            {% for feature in tech.features %}
+            <span
+              class="text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium"
+            >
+              {{ feature }}
+            </span>
+            {% endfor %}
+          </div>
+
+          <!-- Footer: Level + Link -->
+          <div
+            class="flex items-center justify-between pt-4 border-t border-slate-100"
+          >
+            <div class="flex items-center gap-1.5">
+              <span
+                class="text-xs font-semibold {% if tech.level == 'expert' %}text-emerald-600 {% elif tech.level == 'advanced' %}text-amber-600 {% else %}text-slate-600{% endif %}"
+              >
+                {% if tech.level == 'expert' %}⭐ Expert {% elif tech.level ==
+                'advanced' %}🔥 Advanced {% else %}📘 Intermediate{% endif %}
+              </span>
+            </div>
+            {% if tech.website %}
+            <a
+              href="{{ tech.website }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-semibold text-brand-600 hover:text-brand-700 inline-flex items-center gap-1 group/link"
+            >
+              Pelajari
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-transform group-hover/link:translate-x-0.5"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="hidden text-center py-16">
+      <div class="text-6xl mb-4">🔍</div>
+      <h3 class="text-xl font-bold text-ink mb-2">Tidak Ada Teknologi</h3>
+      <p class="text-slate-600">Belum ada teknologi dalam kategori ini.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY BREAKDOWN SECTION -->
+<section class="py-16 sm:py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span
+        class="chip inline-block text-xs font-semibold px-3 py-1.5 rounded-full"
+        >Breakdown Kategori</span
+      >
+      <h2
+        class="mt-4 text-3xl sm:text-4xl font-extrabold text-ink tracking-tight"
+      >
+        Keahlian Kami <span class="gradient-text">per Kategori</span>
+      </h2>
+      <p class="mt-4 text-slate-600">
+        Distribusi teknologi yang kami kuasai berdasarkan kategori.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {% set grouped = techs | groupBy("category") %}
+
+      <!-- Languages -->
+      <div class="bg-white rounded-3xl p-7 border border-slate-100 card-hover">
+        <div
+          class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white flex items-center justify-center shadow-lg shadow-brand-500/30 mb-5"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="16 18 22 12 16 6" />
+            <polyline points="8 6 2 12 8 18" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-ink mb-2">Bahasa Pemrograman</h3>
+        <p class="text-sm text-slate-600 mb-4">
+          Fondasi utama untuk membangun aplikasi.
+        </p>
+        <div class="text-3xl font-extrabold text-brand-600 mb-1">
+          {{ grouped.language.length }}+
+        </div>
+        <div class="text-xs text-slate-500 uppercase tracking-wider">
+          Teknologi
+        </div>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          {% for tech in grouped.language %}
+          <span
+            class="text-xs px-2 py-0.5 rounded bg-brand-50 text-brand-700 font-medium"
+            >{{ tech.name }}</span
+          >
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Frameworks -->
+      <div class="bg-white rounded-3xl p-7 border border-slate-100 card-hover">
+        <div
+          class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-sky-700 text-white flex items-center justify-center shadow-lg shadow-cyan-500/30 mb-5"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M3 9h18M9 21V9" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-ink mb-2">Framework & Library</h3>
+        <p class="text-sm text-slate-600 mb-4">
+          Tools untuk mempercepat development.
+        </p>
+        <div class="text-3xl font-extrabold text-cyan-600 mb-1">
+          {{ grouped.framework.length }}+
+        </div>
+        <div class="text-xs text-slate-500 uppercase tracking-wider">
+          Teknologi
+        </div>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          {% for tech in grouped.framework %}
+          <span
+            class="text-xs px-2 py-0.5 rounded bg-cyan-50 text-cyan-700 font-medium"
+            >{{ tech.name }}</span
+          >
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Runtime -->
+      <div class="bg-white rounded-3xl p-7 border border-slate-100 card-hover">
+        <div
+          class="w-14 h-14 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-purple-700 text-white flex items-center justify-center shadow-lg shadow-fuchsia-500/30 mb-5"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+            />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-ink mb-2">Runtime & Tools</h3>
+        <p class="text-sm text-slate-600 mb-4">
+          Environment untuk menjalankan aplikasi.
+        </p>
+        <div class="text-3xl font-extrabold text-fuchsia-600 mb-1">
+          {{ grouped.runtime.length }}+
+        </div>
+        <div class="text-xs text-slate-500 uppercase tracking-wider">
+          Teknologi
+        </div>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          {% for tech in grouped.runtime %}
+          <span
+            class="text-xs px-2 py-0.5 rounded bg-fuchsia-50 text-fuchsia-700 font-medium"
+            >{{ tech.name }}</span
+          >
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Database -->
+      <div class="bg-white rounded-3xl p-7 border border-slate-100 card-hover">
+        <div
+          class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30 mb-5"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <ellipse cx="12" cy="5" rx="9" ry="3" />
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-ink mb-2">Database</h3>
+        <p class="text-sm text-slate-600 mb-4">
+          Penyimpanan data yang handal dan aman.
+        </p>
+        <div class="text-3xl font-extrabold text-emerald-600 mb-1">
+          {{ grouped.database.length }}+
+        </div>
+        <div class="text-xs text-slate-500 uppercase tracking-wider">
+          Teknologi
+        </div>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          {% for tech in grouped.database %}
+          <span
+            class="text-xs px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-medium"
+            >{{ tech.name }}</span
+          >
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="py-16 sm:py-20">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <div
+      class="relative rounded-[2rem] overflow-hidden bg-gradient-to-br from-brand-700 via-brand-600 to-cyan-600 p-10 sm:p-14 text-center text-white shadow-2xl"
+    >
+      <div
+        class="absolute inset-0 opacity-20"
+        style="
+          background-image:
+            radial-gradient(circle at 20% 20%, white 1px, transparent 1px),
+            radial-gradient(circle at 80% 60%, white 1px, transparent 1px);
+          background-size: 40px 40px;
+        "
+      ></div>
+
+      <div class="relative">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight"
+        >
+          Butuh Teknologi <br class="hidden sm:block" />Spesifik untuk Proyek
+          Anda?
+        </h2>
+        <p class="mt-4 text-white/85 text-lg max-w-2xl mx-auto">
+          Kami fleksibel dalam memilih stack teknologi sesuai kebutuhan.
+          Konsultasikan proyek Anda sekarang.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a
+            href="/#kontak"
+            class="bg-white text-brand-700 font-bold px-8 py-3.5 rounded-full inline-flex items-center gap-2 hover:bg-slate-100 transition"
+          >
+            Diskusikan Proyek
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <a
+            href="/portofolio/"
+            class="border border-white/40 hover:bg-white/10 font-semibold px-8 py-3.5 rounded-full inline-flex items-center gap-2 transition"
+          >
+            Lihat Portofolio
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER SCRIPT -->
+<script>
+  const filterPills = document.querySelectorAll(".filter-pill");
+  const techCards = document.querySelectorAll(".tech-card");
+  const techCountEl = document.getElementById("techCount");
+  const emptyStateEl = document.getElementById("emptyState");
+  const techGrid = document.getElementById("techGrid");
+
+  function updateCount(visibleCount) {
+    techCountEl.textContent = visibleCount;
+    if (visibleCount === 0) {
+      emptyStateEl.classList.remove("hidden");
+      techGrid.classList.add("hidden");
+    } else {
+      emptyStateEl.classList.add("hidden");
+      techGrid.classList.remove("hidden");
+    }
+  }
+
+  filterPills.forEach((pill) => {
+    pill.addEventListener("click", function () {
+      const filter = this.dataset.filter;
+
+      filterPills.forEach((p) => {
+        p.classList.remove("active", "bg-brand-600", "text-white");
+        p.classList.add("bg-slate-100", "text-slate-700");
+      });
+      this.classList.add("active", "bg-brand-600", "text-white");
+      this.classList.remove("bg-slate-100", "text-slate-700");
+
+      let visibleCount = 0;
+      techCards.forEach((card, index) => {
+        const category = card.dataset.category;
+        const shouldShow = filter === "all" || category === filter;
+
+        if (shouldShow) {
+          card.style.display = "";
+          card.style.animation = `fadeUp 0.5s ease-out ${index * 0.03}s both`;
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      updateCount(visibleCount);
+    });
+  });
+</script>
+
+<style>
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

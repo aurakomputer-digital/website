@@ -1,0 +1,367 @@
+[
+  {
+    "name": "Docker",
+    "category": "runtime",
+    "icon": "docker",
+    "color": "#2496ED",
+    "description": "Platform containerization untuk membangun, mendistribusikan, dan menjalankan aplikasi secara konsisten di environment apa pun.",
+    "level": "advanced",
+    "website": "https://www.docker.com",
+    "features": [
+      "Containerization",
+      "Docker Compose",
+      "Image Registry",
+      "Multi-stage Build"
+    ]
+  },
+  {
+    "name": "Linux",
+    "category": "runtime",
+    "icon": "linux",
+    "color": "#FCC624",
+    "description": "Sistem operasi open-source yang menjadi fondasi utama untuk server, cloud, dan infrastruktur modern.",
+    "level": "expert",
+    "website": "https://www.linux.org",
+    "features": [
+      "Open Source",
+      "Multi-user",
+      "Shell scripting",
+      "High security"
+    ]
+  },
+  {
+    "name": "Ubuntu",
+    "category": "runtime",
+    "icon": "ubuntu",
+    "color": "#E95420",
+    "description": "Distribusi Linux paling populer yang ramah developer dengan dukungan komunitas dan LTS yang stabil.",
+    "level": "expert",
+    "website": "https://ubuntu.com",
+    "features": [
+      "LTS Support",
+      "APT package manager",
+      "Snap packages",
+      "Server & Desktop ready"
+    ]
+  },
+  {
+    "name": "Debian",
+    "category": "runtime",
+    "icon": "debian",
+    "color": "#A81D33",
+    "description": "Distribusi Linux terkenal dengan stabilitas tinggi, sering menjadi basis untuk server enterprise.",
+    "level": "advanced",
+    "website": "https://www.debian.org",
+    "features": [
+      "Rock-solid stability",
+      "Huge repository",
+      "Free software",
+      "Multi-arch support"
+    ]
+  },
+  {
+    "name": "RestAPI",
+    "category": "runtime",
+    "icon": "postman",
+    "color": "#0A0A0A",
+    "description": "Arsitektur API berbasis HTTP yang menjadi standar integrasi antar sistem modern dan layanan cloud.",
+    "level": "expert",
+    "website": "https://restfulapi.net",
+    "features": [
+      "Stateless design",
+      "JSON/XML format",
+      "HTTP methods",
+      "Authentication ready"
+    ]
+  },
+  {
+    "name": "PHP",
+    "category": "language",
+    "icon": "php",
+    "color": "#777BB4",
+    "description": "Bahasa scripting server-side paling populer untuk pengembangan web dinamis dengan dukungan hosting yang luas.",
+    "level": "expert",
+    "website": "https://www.php.net",
+    "features": [
+      "Server-side scripting",
+      "Cross-platform",
+      "Open source",
+      "Database luas"
+    ]
+  },
+  {
+    "name": "JavaScript",
+    "category": "language",
+    "icon": "javascript",
+    "color": "#F7DF1E",
+    "description": "Bahasa pemrograman serbaguna untuk membangun web interaktif, dari frontend hingga backend dengan Node.js.",
+    "level": "expert",
+    "website": "https://developer.mozilla.org/docs/Web/JavaScript",
+    "features": [
+      "Multi-paradigma",
+      "Event-driven",
+      "Asynchronous",
+      "Ekosistem luas"
+    ]
+  },
+  {
+    "name": "TypeScript",
+    "category": "language",
+    "icon": "typescript",
+    "color": "#3178C6",
+    "description": "Superset JavaScript dengan static typing untuk kode yang lebih aman, scalable, dan mudah di-maintain.",
+    "level": "advanced",
+    "website": "https://www.typescriptlang.org",
+    "features": [
+      "Static typing",
+      "Type inference",
+      "ES6+ support",
+      "Tooling modern"
+    ]
+  },
+  {
+    "name": "Python",
+    "category": "language",
+    "icon": "python",
+    "color": "#3776AB",
+    "description": "Bahasa serbaguna untuk scripting, automasi, data science, AI, dan backend dengan sintaks yang mudah dibaca.",
+    "level": "advanced",
+    "website": "https://www.python.org",
+    "features": [
+      "Mudah dipelajari",
+      "Library melimpah",
+      "AI/ML ready",
+      "Scripting powerful"
+    ]
+  },
+  {
+    "name": "Laravel",
+    "category": "framework",
+    "icon": "laravel",
+    "color": "#FF2D20",
+    "description": "Framework PHP elegan dengan sintaks ekspresif untuk membangun aplikasi web modern yang scalable dan aman.",
+    "level": "expert",
+    "website": "https://laravel.com",
+    "features": [
+      "Eloquent ORM",
+      "Blade templating",
+      "Artisan CLI",
+      "Migration system"
+    ]
+  },
+  {
+    "name": "Next.js",
+    "category": "framework",
+    "icon": "next.js",
+    "color": "#000000",
+    "description": "Framework React untuk produksi dengan fitur SSR, SSG, dan full-stack capabilities yang powerful.",
+    "level": "expert",
+    "website": "https://nextjs.org",
+    "features": [
+      "Server-side rendering",
+      "Static generation",
+      "API routes",
+      "Image optimization"
+    ]
+  },
+  {
+    "name": "React",
+    "category": "framework",
+    "icon": "react",
+    "color": "#61DAFB",
+    "description": "Library JavaScript populer untuk membangun antarmuka pengguna yang interaktif dengan komponen reusable.",
+    "level": "expert",
+    "website": "https://react.dev",
+    "features": [
+      "Component-based",
+      "Virtual DOM",
+      "Hooks API",
+      "Ekosistem luas"
+    ]
+  },
+  {
+    "name": "React Native",
+    "category": "framework",
+    "icon": "react",
+    "color": "#61DAFB",
+    "description": "Framework untuk membangun aplikasi mobile native Android & iOS dari satu codebase menggunakan React.",
+    "level": "advanced",
+    "website": "https://reactnative.dev",
+    "features": [
+      "Cross-platform",
+      "Native components",
+      "Hot reloading",
+      "Code reuse"
+    ]
+  },
+  {
+    "name": "Vue.js",
+    "category": "framework",
+    "icon": "vue.js",
+    "color": "#4FC08D",
+    "description": "Framework JavaScript progresif yang ringan dan mudah diadopsi untuk membangun antarmuka pengguna reaktif.",
+    "level": "advanced",
+    "website": "https://vuejs.org",
+    "features": [
+      "Reactive data",
+      "Composition API",
+      "Single-file components",
+      "Ringan"
+    ]
+  },
+  {
+    "name": "Flutter",
+    "category": "framework",
+    "icon": "flutter",
+    "color": "#02569B",
+    "description": "Framework UI dari Google untuk membangun aplikasi mobile, web, dan desktop dari satu codebase Dart.",
+    "level": "advanced",
+    "website": "https://flutter.dev",
+    "features": [
+      "Cross-platform",
+      "Hot reload",
+      "Widget-based",
+      "Native performance"
+    ]
+  },
+  {
+    "name": "Tailwind CSS",
+    "category": "framework",
+    "icon": "tailwindcss",
+    "color": "#06B6D4",
+    "description": "Framework CSS utility-first untuk membangun desain kustom yang responsif dengan cepat tanpa meninggalkan HTML.",
+    "level": "expert",
+    "website": "https://tailwindcss.com",
+    "features": [
+      "Utility-first",
+      "Responsive design",
+      "Dark mode",
+      "Customizable"
+    ]
+  },
+  {
+    "name": "Bootstrap",
+    "category": "framework",
+    "icon": "bootstrap",
+    "color": "#563d7c",
+    "description": "Framework CSS paling populer dengan komponen siap pakai untuk membangun website responsif dengan cepat.",
+    "level": "advanced",
+    "website": "https://getbootstrap.com",
+    "features": [
+      "Grid system",
+      "Pre-built components",
+      "JavaScript plugins",
+      "Responsive"
+    ]
+  },
+  {
+    "name": "Node.js",
+    "category": "runtime",
+    "icon": "node.js",
+    "color": "#339933",
+    "description": "Runtime JavaScript di server yang cepat dan scalable, cocok untuk API, microservices, dan real-time apps.",
+    "level": "expert",
+    "website": "https://nodejs.org",
+    "features": [
+      "Non-blocking I/O",
+      "NPM ecosystem",
+      "Event-driven",
+      "Scalable"
+    ]
+  },
+  {
+    "name": "Bun.js",
+    "category": "runtime",
+    "icon": "bun",
+    "color": "#0d1117",
+    "description": "Runtime JavaScript modern yang super cepat, kompatibel dengan Node.js, dengan bundler dan test runner bawaan.",
+    "level": "advanced",
+    "website": "https://bun.sh",
+    "features": [
+      "Ultra-fast runtime",
+      "Built-in bundler",
+      "SQLite native",
+      "Node.js compatible"
+    ]
+  },
+  {
+    "name": "MySQL",
+    "category": "database",
+    "icon": "mysql",
+    "color": "#4479A1",
+    "description": "Sistem manajemen database relasional open-source paling populer dengan performa tinggi dan stabilitas teruji.",
+    "level": "expert",
+    "website": "https://www.mysql.com",
+    "features": [
+      "Relational",
+      "ACID compliant",
+      "High performance",
+      "Replication"
+    ]
+  },
+  {
+    "name": "MariaDB",
+    "category": "database",
+    "icon": "mariadb",
+    "color": "#003545",
+    "description": "Fork open-source dari MySQL dengan fitur tambahan, storage engine lebih banyak, dan performa yang lebih baik.",
+    "level": "advanced",
+    "website": "https://mariadb.org",
+    "features": [
+      "MySQL compatible",
+      "More engines",
+      "Open source",
+      "High availability"
+    ]
+  },
+  {
+    "name": "PostgreSQL",
+    "category": "database",
+    "icon": "postgresql",
+    "color": "#336791",
+    "description": "Database relasional advanced dengan fitur lengkap untuk aplikasi enterprise dan data kompleks.",
+    "level": "advanced",
+    "website": "https://www.postgresql.org",
+    "features": ["Advanced SQL", "JSON support", "Extensible", "Reliable"]
+  },
+  {
+    "name": "SQLite",
+    "category": "database",
+    "icon": "sqlite",
+    "color": "#07405e",
+    "description": "Database relasional embedded yang ringan, zero-configuration, cocok untuk aplikasi desktop dan mobile.",
+    "level": "advanced",
+    "website": "https://www.sqlite.org",
+    "features": [
+      "Serverless",
+      "Zero config",
+      "Cross-platform",
+      "Self-contained"
+    ]
+  },
+  {
+    "name": "Redis",
+    "category": "database",
+    "icon": "redis",
+    "color": "#d82c20",
+    "description": "Database in-memory tercepat untuk caching, session storage, dan real-time applications.",
+    "level": "advanced",
+    "website": "https://redis.io",
+    "features": ["In-memory", "Key-value store", "Pub/Sub", "High throughput"]
+  },
+  {
+    "name": "JSON",
+    "category": "data",
+    "icon": "json",
+    "color": "#000000",
+    "description": "Format data ringan yang menjadi standar pertukaran data antar sistem, API, dan konfigurasi modern.",
+    "level": "expert",
+    "website": "https://www.json.org",
+    "features": [
+      "Lightweight",
+      "Human-readable",
+      "Language independent",
+      "API standard"
+    ]
+  }
+]
