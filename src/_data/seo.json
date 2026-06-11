@@ -1,0 +1,28 @@
+{
+  "siteName": "Aura Komputer Digital",
+  "siteTagline": "Jasa Pembuatan Aplikasi Web, Desktop & Mobile Profesional",
+  "description": "Jasa pembuatan aplikasi Web, Desktop, dan Mobile profesional. Dari Banyumas untuk Indonesia — siap mendigitalisasi sekolah, UMKM, hingga instansi Anda dengan teknologi mutakhir.",
+  "url": "https://aurakomputer.my.id",
+  "language": "id",
+  "locale": "id_ID",
+  "author": "Aura Komputer Digital",
+  "email": "aura.komputer.office@gmail.com",
+  "phone": "+62 851-6174-8582",
+  "address": {
+    "street": "Jl. Kasegeran Rt. 9 / Rw. 2",
+    "city": "Banyumas",
+    "region": "Jawa Tengah",
+    "postalCode": "53162",
+    "country": "Indonesia"
+  },
+  "social": {
+    "twitter": "@aurakomputer",
+    "instagram": "https://instagram.com/banyumasdigital",
+    "github": "https://github.com/aurakomputer"
+  },
+  "defaultImage": "https://banyumasdigital.id/img/og-default.jpg",
+  "logo": "https://aurakomputer.my.id/assets/img/favicon.webp",
+  "googleAnalytics": "G-XXXXXXXXXX",
+  "googleSearchConsole": "BZ86uFp7oIRDui7jUJ9pWvJPZPytRPnLQm4RAAj1j9M",
+  "bingWebmaster": "your-bing-code"
+}

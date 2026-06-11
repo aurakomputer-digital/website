@@ -4,6 +4,9 @@ import tailwindcss from "@tailwindcss/vite";
 import { DateTime } from "luxon";
 import fontAwesomePlugin from "@11ty/font-awesome";
 import { getAllPosts, showInSitemap, tagList } from "./src/_config/collections";
+
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import sitemap from "@quasibit/eleventy-plugin-sitemap";
 import * as filters from "./src/_config/filters";
 
 export default function (eleventyConfig) {
@@ -27,7 +30,16 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/css/main.css");
   eleventyConfig.addPassthroughCopy("src/assets/js/scripts.js");
 
+  eleventyConfig.addPlugin(pluginRss);
+
   eleventyConfig.addPlugin(fontAwesomePlugin);
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://aurakomputer.my.id",
+    },
+    lastModifiedProperty: "modified",
+    permalink: "/sitemap.xml",
+  });
   eleventyConfig.addPlugin(eleventyVitePlugin, {
     viteOptions: {
       plugins: [tailwindcss()],
@@ -47,18 +59,6 @@ export default function (eleventyConfig) {
       eleventyConfig.addFilter(name, filter);
     }
   }
-
-  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, {
-      zone: "Asia/Jakarta",
-    }).toFormat("yy-MM-dd");
-  });
-
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, {
-      zone: "Asia/Jakarta",
-    }).toFormat("dd-MM-yy");
-  });
 
   return {
     dir: {

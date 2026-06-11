@@ -1,0 +1,18 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+User-agent: *
+Allow: /
+
+{# Sitemap #}
+Sitemap: {{ seo.url }}/sitemap.xml
+
+{# Blokir halaman sensitif #}
+Disallow: /admin/
+Disallow: /draft/
+Disallow: /api/
+Disallow: /_data/
+
+{# Crawl-delay untuk bot yang mendukung #}
+Crawl-delay: 1

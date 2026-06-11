@@ -20,5 +20,8 @@
     "@tailwindcss/vite": "4",
     "json5": "^2.2.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@11ty/eleventy-plugin-rss": "^3.0.0",
+    "@quasibit/eleventy-plugin-sitemap": "^2.2.0"
+  }
 }

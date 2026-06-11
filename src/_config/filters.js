@@ -1,15 +1,14 @@
 /** Converts string to a slug form. */
-export const slugifyString = (text) => {
-  if (!text) return "";
-
-  return text
+export const slugify = (str) => {
+  if (!str) return "";
+  return str
     .toString()
-    .normalize("NFD") // 1. Pisahkan karakter aksen dari huruf dasar (é -> e + ´)
-    .replace(/[\u0300-\u036f]/g, "") // 2. Hapus tanda aksen tersebut
-    .toLowerCase() // 3. Ubah semua huruf menjadi kecil
-    .trim() // 4. Hapus spasi di awal dan akhir string
-    .replace(/[^a-z0-9]+/g, "-") // 5. Ganti SEMUA karakter non-alfanumerik (spasi, &, !, dll) dengan '-'
-    .replace(/^-+|-+$/g, ""); // 6. Hapus '-' jika kebetulan ada di paling awal atau paling akhir
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 };
 
 export const groupBy = (arr, key) => {
@@ -34,4 +33,28 @@ export const sortBy = (arr, key) => {
     if (a[key] > b[key]) return 1;
     return 0;
   });
+};
+
+export const dateToIso = (date) => {
+  if (!date) return new Date().toISOString();
+  return new Date(date).toISOString();
+};
+
+export const readableDate = (date) => {
+  if (!date) return "";
+  return new Date(date).toLocaleDateString("id-ID", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+};
+
+export const limit = (arr, limit) => {
+  return arr.slice(0, limit);
+};
+
+export const htmlDateString = (dateObj) => {
+  return DateTime.fromJSDate(dateObj, {
+    zone: "Asia/Jakarta",
+  }).toFormat("yy-MM-dd");
 };

@@ -1,0 +1,234 @@
+{# ============================================ #} {# ORGANIZATION SCHEMA
+(Global) #} {# ============================================ #}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ seo.siteName }}",
+    "alternateName": "Banyumas Digital Software House",
+    "url": "{{ seo.url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ seo.logo }}",
+      "width": 512,
+      "height": 512
+    },
+    "description": "{{ seo.description }}",
+    "email": "{{ seo.email }}",
+    "telephone": "{{ seo.phone }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ seo.address.street }}",
+      "addressLocality": "{{ seo.address.city }}",
+      "addressRegion": "{{ seo.address.region }}",
+      "postalCode": "{{ seo.address.postalCode }}",
+      "addressCountry": "{{ seo.address.country }}"
+    },
+    "sameAs": [
+      "{{ seo.social.instagram }}",
+      "{{ seo.social.facebook }}",
+      "{{ seo.social.linkedin }}",
+      "{{ seo.social.github }}"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "{{ seo.phone }}",
+      "contactType": "customer service",
+      "email": "{{ seo.email }}",
+      "areaServed": "ID",
+      "availableLanguage": ["Indonesian", "English"]
+    },
+    "foundingDate": "2020",
+    "founder": {
+      "@type": "Person",
+      "name": "{{ seo.author }}"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Indonesia"
+    },
+    "knowsAbout": [
+      "Web Development",
+      "Mobile App Development",
+      "Desktop Application",
+      "UI/UX Design",
+      "Digital Transformation"
+    ]
+  }
+</script>
+
+{# ============================================ #} {# LOCAL BUSINESS SCHEMA #}
+{# ============================================ #}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "{{ seo.url }}/#business",
+    "name": "{{ seo.siteName }}",
+    "image": "{{ seo.defaultImage }}",
+    "url": "{{ seo.url }}",
+    "telephone": "{{ seo.phone }}",
+    "email": "{{ seo.email }}",
+    "priceRange": "Rp 5.000.000 - Rp 500.000.000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ seo.address.street }}",
+      "addressLocality": "{{ seo.address.city }}",
+      "addressRegion": "{{ seo.address.region }}",
+      "postalCode": "{{ seo.address.postalCode }}",
+      "addressCountry": "{{ seo.address.country }}"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -7.4214,
+      "longitude": 109.2342
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "85",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+</script>
+
+{# ============================================ #} {# WEBSITE SCHEMA #} {#
+============================================ #}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ seo.siteName }}",
+    "url": "{{ seo.url }}",
+    "inLanguage": "{{ seo.language }}",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ seo.url }}/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+</script>
+
+{# ============================================ #} {# BREADCRUMB SCHEMA (jika
+ada breadcrumbs) #} {# ============================================ #} {% if
+breadcrumbs %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {% for crumb in breadcrumbs %}
+      {
+        "@type": "ListItem",
+        "position": {{ loop.index }},
+        "name": "{{ crumb.title }}",
+        "item": "{{ crumb.url or seo.url }}"
+      }{{ "," if not loop.last }}
+      {% endfor %}
+    ]
+  }
+</script>
+{% endif %} {# ============================================ #} {# PAGE-SPECIFIC
+SCHEMA #} {# ============================================ #} {% if schemaType ==
+"Service" %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "{{ title }}",
+    "provider": {
+      "@type": "Organization",
+      "name": "{{ seo.siteName }}",
+      "url": "{{ seo.url }}"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Indonesia"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Layanan Digital",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Aplikasi Web"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Aplikasi Desktop"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Aplikasi Mobile"
+          }
+        }
+      ]
+    }
+  }
+</script>
+{% endif %} {% if schemaType == "CreativeWork" %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "{{ title }}",
+    "description": "{{ description }}",
+    "url": "{{ pageUrl }}",
+    "image": "{{ pageImage }}",
+    "author": {
+      "@type": "Organization",
+      "name": "{{ seo.siteName }}"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "{{ seo.siteName }}"
+    },
+    "datePublished": "{{ date or page.date | dateToIso }}",
+    "dateModified": "{{ updated or page.date | dateToIso }}"
+  }
+</script>
+{% endif %} {% if schemaType == "FAQPage" and faqs %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {% for faq in faqs %}
+      {
+        "@type": "Question",
+        "name": "{{ faq.question }}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{ faq.answer }}"
+        }
+      }{{ "," if not loop.last }}
+      {% endfor %}
+    ]
+  }
+</script>
+{% endif %}

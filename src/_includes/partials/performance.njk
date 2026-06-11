@@ -1,0 +1,26 @@
+{# Preload critical resources #}
+<link rel="preload" as="image" href="/img/hero.webp" type="image/webp" />
+<link
+  rel="preload"
+  as="font"
+  href="/fonts/plus-jakarta-sans.woff2"
+  type="font/woff2"
+  crossorigin
+/>
+
+{# DNS prefetch untuk CDN #}
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="https://raw.githubusercontent.com" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+{# Service Worker registration #}
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/sw.js")
+        .then((reg) => console.log("SW registered"))
+        .catch((err) => console.log("SW failed", err));
+    });
+  }
+</script>
