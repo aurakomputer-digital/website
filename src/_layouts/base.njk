@@ -12,6 +12,7 @@
     {% include "components/header.njk" %}
     <main>{{ content | safe }}</main>
     {% include "components/footer.njk" %} {% getBundle "fontawesome" %}
+    <div id="whatsapp-widget">&nbsp;</div>
   </body>
   {% for js in plugins.js %}
   <script src="{{ js }}"></script>
