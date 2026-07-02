@@ -1,0 +1,906 @@
+---
+layout: base.njk
+---
+
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docsSidebar">
+    <div class="docs-sidebar-inner">
+      <div class="sidebar-header">
+        <div class="flex items-center gap-2">
+          <div
+            class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path
+                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+              />
+            </svg>
+          </div>
+          <div>
+            <div class="font-bold text-ink text-sm">Panduan Aplikasi</div>
+            <div class="text-[10px] text-slate-500">{{ site.title }}</div>
+          </div>
+        </div>
+        <button
+          id="closeSidebar"
+          class="lg:hidden w-8 h-8 rounded-lg hover:bg-slate-100 flex items-center justify-center text-slate-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        {% set currentAppFolder = page.inputPath | getPanduanFolderCurrentPage
+        %} {% set items = collections.allDokumentasiPanduan |
+        filterByIncludes("inputPath", currentAppFolder) %}
+
+        <ul class="nav-items-list">
+          {% for item in items %}
+          <li>
+            <a
+              href="{{ item.url }}"
+              class="nav-item {% if item.url == page.url %}active{% endif %}"
+              data-title="{{ item.data.title | lower }}"
+            >
+              <span class="nav-item-text">{{ item.data.title }}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+
+        <div id="emptyNavState" class="hidden text-center py-8 px-4">
+          <div class="text-3xl mb-2">🔍</div>
+          <p class="text-xs text-slate-500">Tidak ditemukan</p>
+        </div>
+      </nav>
+    </div>
+  </aside>
+
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+  <div class="docs-content-wrapper">
+    <div class="docs-topbar">
+      <button
+        id="toggleSidebar"
+        class="lg:hidden topbar-btn"
+        aria-label="Buka menu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
+      <nav class="breadcrumb">
+        <a href="/" class="breadcrumb-link">Beranda</a>
+        <svg
+          class="breadcrumb-sep"
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+        <a href="/panduan/" class="breadcrumb-link">Panduan</a>
+        <svg
+          class="breadcrumb-sep"
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+        <span class="breadcrumb-current">{{ title }}</span>
+      </nav>
+    </div>
+
+    <main class="docs-main">
+      <article class="docs-article">
+        <header class="article-header">
+          <div class="flex items-center justify-between gap-4 mb-3 flex-wrap">
+            <div class="flex items-center gap-2">
+              {% if category %}
+              <span
+                class="text-xs px-2 py-0.5 rounded-full font-semibold {% if category == 'Web' %}bg-brand-100 text-brand-700 {% elif category == 'Desktop' %}bg-emerald-100 text-emerald-700 {% elif category == 'Mobile' %}bg-fuchsia-100 text-fuchsia-700 {% else %}bg-slate-100 text-slate-700{% endif %}"
+              >
+                {{ category }}
+              </span>
+              {% endif %} {% if group %}
+              <span class="text-xs text-slate-500">• {{ group }}</span>
+              {% endif %}
+            </div>
+
+            <div class="article-actions flex items-center gap-2">
+              <button
+                id="shareBtn"
+                class="action-btn"
+                title="Bagikan halaman ini"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                  <polyline points="16 6 12 2 8 6" />
+                  <line x1="12" y1="2" x2="12" y2="15" />
+                </svg>
+                <span>Bagikan</span>
+              </button>
+              <button id="printBtn" class="action-btn" title="Cetak dokumen">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 6 2 18 2 18 9" />
+                  <path
+                    d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+                  />
+                  <rect x="6" y="14" width="12" height="8" />
+                </svg>
+                <span>Cetak</span>
+              </button>
+            </div>
+          </div>
+
+          <h1 class="article-title">{{ title }}</h1>
+
+          {% if description %}
+          <p class="article-description">{{ description }}</p>
+          {% endif %} {% if updated %}
+          <div class="article-meta">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            Terakhir diperbarui: {{ updated | readableDate }} {% if version %}
+            <span class="mx-2">•</span>
+            <span>v{{ version }}</span>
+            {% endif %}
+          </div>
+          {% endif %}
+        </header>
+
+        <div class="article-content prose-vite">{{ content | safe }}</div>
+
+        {% if tags and tags.length > 1 %}
+        <div class="article-tags">
+          {% for tag in tags %} {% if tag != "dokumentasiPanduan" %}
+          <span class="tag-pill">#{{ tag }}</span>
+          {% endif %} {% endfor %}
+        </div>
+        {% endif %} {% set currentAppFolder = page.inputPath |
+        getPanduanFolderCurrentPage %} {% set docs =
+        collections.allDokumentasiPanduan | filterByIncludes("inputPath",
+        currentAppFolder) %} {% set currentIndex = -1 %} {% for doc in docs %}
+        {% if doc.url == page.url %} {% set currentIndex = loop.index0 %} {%
+        endif %} {% endfor %}
+
+        <nav class="article-nav">
+          {% if currentIndex > 0 %} {% set prevDoc = docs[currentIndex - 1] %}
+          <a href="{{ prevDoc.url }}" class="nav-card nav-card-prev">
+            <div class="nav-card-label">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="19" y1="12" x2="5" y2="12" />
+                <polyline points="12 19 5 12 12 5" />
+              </svg>
+              Sebelumnya
+            </div>
+            <div class="nav-card-title">{{ prevDoc.data.title }}</div>
+          </a>
+          {% else %}
+          <div></div>
+          {% endif %} {% if currentIndex < docs.length - 1 and currentIndex >= 0
+          %} {% set nextDoc = docs[currentIndex + 1] %}
+          <a href="{{ nextDoc.url }}" class="nav-card nav-card-next">
+            <div class="nav-card-label">
+              Selanjutnya
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </div>
+            <div class="nav-card-title">{{ nextDoc.data.title }}</div>
+          </a>
+          {% else %}
+          <div></div>
+          {% endif %}
+        </nav>
+      </article>
+    </main>
+  </div>
+</div>
+
+<style>
+  /* ============================================ */
+  /* LAYOUT */
+  /* ============================================ */
+  .docs-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #ffffff;
+  }
+
+  /* ============================================ */
+  /* SIDEBAR */
+  /* ============================================ */
+  .docs-sidebar {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    overflow-y: auto;
+    z-index: 40;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  @media (min-width: 1024px) {
+    .docs-sidebar {
+      transform: translateX(0);
+    }
+  }
+
+  .docs-sidebar-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.25rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  /* ============================================ */
+  /* NAVIGATION ITEMS */
+  /* ============================================ */
+  .sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.75rem 0;
+  }
+
+  .nav-items-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    display: block;
+    padding: 0.5rem 1.25rem 0.5rem 1.5rem;
+    font-size: 0.8125rem;
+    color: #64748b;
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    line-height: 1.5;
+  }
+
+  .nav-item:hover {
+    color: #0b1220;
+    background: #f8fafc;
+  }
+
+  .nav-item.active {
+    color: #4a62f5;
+    font-weight: 600;
+    border-left-color: #4a62f5;
+    background: linear-gradient(to right, rgba(74, 98, 245, 0.05), transparent);
+  }
+
+  /* ============================================ */
+  /* SIDEBAR OVERLAY */
+  /* ============================================ */
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 18, 32, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 30;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .sidebar-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ============================================ */
+  /* CONTENT WRAPPER */
+  /* ============================================ */
+  .docs-content-wrapper {
+    flex: 1;
+    min-width: 0;
+    margin-left: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .docs-content-wrapper {
+      margin-left: 280px;
+    }
+  }
+
+  /* ============================================ */
+  /* TOP BAR */
+  /* ============================================ */
+  .docs-topbar {
+    position: sticky;
+    top: 5rem;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  @media (min-width: 1024px) {
+    .docs-topbar {
+      padding: 0.75rem 2.5rem;
+    }
+  }
+
+  .topbar-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .topbar-btn:hover {
+    background: #f8fafc;
+    color: #4a62f5;
+  }
+
+  /* ============================================ */
+  /* BREADCRUMB */
+  /* ============================================ */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb-link {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .breadcrumb-link:hover {
+    color: #4a62f5;
+  }
+
+  .breadcrumb-sep {
+    color: #cbd5e1;
+  }
+
+  .breadcrumb-current {
+    color: #0b1220;
+    font-weight: 600;
+  }
+
+  /* ============================================ */
+  /* ACTION BUTTONS (SHARE & PRINT) */
+  /* ============================================ */
+  .action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .action-btn:hover {
+    background: #f8fafc;
+    color: #4a62f5;
+    border-color: #cbd5e1;
+  }
+
+  .action-btn svg {
+    flex-shrink: 0;
+  }
+
+  /* ============================================ */
+  /* MAIN CONTENT */
+  /* ============================================ */
+  .docs-main {
+    padding: 2rem 1.5rem 4rem;
+    max-width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .docs-main {
+      padding: 3rem 2.5rem 5rem;
+    }
+  }
+
+  .docs-article {
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  /* ============================================ */
+  /* ARTICLE HEADER */
+  /* ============================================ */
+  .article-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .article-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0b1220;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .article-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .article-description {
+    font-size: 1.0625rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: #94a3b8;
+  }
+
+  /* ============================================ */
+  /* ARTICLE CONTENT (VitePress Style Prose) */
+  /* ============================================ */
+  .prose-vite {
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .prose-vite h1,
+  .prose-vite h2,
+  .prose-vite h3,
+  .prose-vite h4 {
+    color: #0b1220;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .prose-vite h1 {
+    font-size: 1.875rem;
+    margin-top: 0;
+  }
+  .prose-vite h2 {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .prose-vite h3 {
+    font-size: 1.25rem;
+  }
+  .prose-vite h4 {
+    font-size: 1.125rem;
+  }
+  .prose-vite p {
+    margin: 1.25rem 0;
+  }
+
+  .prose-vite a {
+    color: #4a62f5;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+  .prose-vite a:hover {
+    border-bottom-color: #4a62f5;
+  }
+  .prose-vite strong {
+    color: #0b1220;
+    font-weight: 600;
+  }
+  .prose-vite ul,
+  .prose-vite ol {
+    margin: 1.25rem 0;
+    padding-left: 1.5rem;
+  }
+  .prose-vite ul {
+    list-style: disc;
+  }
+  .prose-vite ol {
+    list-style: decimal;
+  }
+  .prose-vite li {
+    margin: 0.5rem 0;
+  }
+  .prose-vite li::marker {
+    color: #4a62f5;
+  }
+
+  .prose-vite code {
+    background: #f1f5f9;
+    color: #e11d48;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  .prose-vite pre {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.75rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .prose-vite pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+  }
+
+  /* ============================================ */
+  /* TAGS */
+  /* ============================================ */
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .tag-pill {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: #f1f5f9;
+    color: #475569;
+    font-weight: 500;
+  }
+
+  /* ============================================ */
+  /* PREV / NEXT NAVIGATION */
+  /* ============================================ */
+  .article-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  @media (min-width: 640px) {
+    .article-nav {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .nav-card {
+    display: block;
+    padding: 1rem 1.25rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    background: #ffffff;
+  }
+
+  .nav-card:hover {
+    border-color: #4a62f5;
+    box-shadow: 0 4px 12px rgba(74, 98, 245, 0.1);
+    transform: translateY(-1px);
+  }
+
+  .nav-card-prev {
+    text-align: left;
+  }
+  .nav-card-next {
+    text-align: right;
+  }
+
+  .nav-card-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.375rem;
+  }
+
+  .nav-card-title {
+    font-size: 0.9375rem;
+    color: #0b1220;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .nav-card:hover .nav-card-title {
+    color: #4a62f5;
+  }
+
+  /* ============================================ */
+  /* SCROLLBAR */
+  /* ============================================ */
+  .docs-sidebar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .docs-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .docs-sidebar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+  }
+
+  footer {
+    display: none;
+  }
+
+  /* ============================================ */
+  /* PRINT STYLES (CRITICAL UPDATE) */
+  /* ============================================ */
+  @media print {
+    /* Sembunyikan elemen global website (header, footer, sidebar, topbar, navigasi bawah) */
+    .header,
+    .footer,
+    footer,
+    header:not(.article-header),
+    .docs-sidebar,
+    .docs-topbar,
+    .article-nav,
+    .article-actions,
+    #sidebarOverlay {
+      display: none !important;
+    }
+
+    /* Hilangkan margin/padding layout luar agar konten penuh ke kertas */
+    .docs-layout {
+      display: block !important;
+      min-height: auto !important;
+      background: transparent !important;
+    }
+
+    .docs-content-wrapper {
+      margin-left: 0 !important;
+      padding: 0 !important;
+    }
+
+    .docs-main {
+      padding: 0 !important;
+    }
+
+    .docs-article {
+      max-width: 100% !important;
+      margin: 0 !important;
+    }
+
+    /* Mengatur page-break agar tidak memotong code-block atau gambar di tengah halaman */
+    pre,
+    blockquote,
+    table,
+    img {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+
+<script>
+  // ============================================
+  // DOM Elements
+  // ============================================
+  const sidebar = document.getElementById("docsSidebar");
+  const sidebarOverlay = document.getElementById("sidebarOverlay");
+  const toggleSidebarBtn = document.getElementById("toggleSidebar");
+  const closeSidebarBtn = document.getElementById("closeSidebar");
+  const shareBtn = document.getElementById("shareBtn");
+  const printBtn = document.getElementById("printBtn");
+
+  // ============================================
+  // Sidebar Toggle (Mobile)
+  // ============================================
+  function openSidebar() {
+    sidebar.style.transform = "translateX(0)";
+    sidebarOverlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeSidebar() {
+    sidebar.style.transform = "";
+    sidebarOverlay.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  toggleSidebarBtn?.addEventListener("click", openSidebar);
+  closeSidebarBtn?.addEventListener("click", closeSidebar);
+  sidebarOverlay?.addEventListener("click", closeSidebar);
+
+  // ============================================
+  // Auto-scroll active item into view
+  // ============================================
+  const activeItem = document.querySelector(".nav-item.active");
+  if (activeItem) {
+    setTimeout(() => {
+      activeItem.scrollIntoView({ block: "center", behavior: "smooth" });
+    }, 100);
+  }
+
+  // ============================================
+  // Share Funtionality (Web Share API)
+  // ============================================
+  shareBtn?.addEventListener("click", async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "{{ title }}",
+          text: "{{ description or title }}",
+          url: window.location.href,
+        });
+      } catch (err) {
+        console.log("Share ditolak/dibatalkan:", err);
+      }
+    } else {
+      // Fallback jika browser tidak mendukung Web Share API (Salin Tautan)
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        const originalText = shareBtn.innerHTML;
+        shareBtn.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Tersalin!</span>
+        `;
+        setTimeout(() => {
+          shareBtn.innerHTML = originalText;
+        }, 2000);
+      } catch (err) {
+        alert("Gagal menyalin tautan.");
+      }
+    }
+  });
+
+  // ============================================
+  // Print Functionality
+  // ============================================
+  printBtn?.addEventListener("click", () => {
+    window.print();
+  });
+</script>

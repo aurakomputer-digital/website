@@ -8,6 +8,10 @@
       title: "Teknologi",
       url: "/teknologi/",
     },
+    {
+      title: "Panduan",
+      url: "/panduan/",
+    },
   ],
   footer: [
     {

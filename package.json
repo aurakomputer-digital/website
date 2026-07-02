@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "clean": "rm -rf dist",
-    "serve:eleventy": "npx @11ty/eleventy --serve",
+    "serve:eleventy": "npx @11ty/eleventy --serve --port 5555",
     "dev": "bun run clean && bun --bun run serve:eleventy",
     "build:eleventy": "npx @11ty/eleventy",
     "build": "bun run clean && bun run build:eleventy"
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^3.0.0",
-    "@quasibit/eleventy-plugin-sitemap": "^2.2.0"
+    "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
+    "markdown-it-obsidian-callouts": "^0.3.4"
   }
 }

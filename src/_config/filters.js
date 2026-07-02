@@ -21,9 +21,17 @@ export const groupBy = (arr, key) => {
   }, {});
 };
 
+export const groupKeys = (obj) => {
+  return obj ? Object.keys(obj) : [];
+};
 export const filterBy = (arr, key, value) => {
   if (!arr) return [];
   return arr.filter((item) => item[key] === value);
+};
+
+export const filterByIncludes = (arr, key, value) => {
+  if (!arr) return [];
+  return arr.filter((item) => item[key].includes(value));
 };
 
 export const sortBy = (arr, key) => {
@@ -58,3 +66,18 @@ export const htmlDateString = (dateObj) => {
     zone: "Asia/Jakarta",
   }).toFormat("yy-MM-dd");
 };
+
+export const toJson = (value) => {
+  return JSON.stringify(value, null, 2);
+};
+
+export function getPanduanFolderCurrentPage(inputPath) {
+  if (!inputPath) return "";
+
+  // Menghapus './src/panduan/' di awal path
+  const relativePath = inputPath.replace(/^\.\/src\/panduan\//, "");
+
+  // Mengambil bagian pertama sebelum tanda '/' berikutnya
+  const app = relativePath.split("/")[0];
+  return `./src/panduan/${app}/`;
+}

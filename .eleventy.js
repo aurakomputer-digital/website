@@ -1,9 +1,17 @@
+import MarkdownItObsidianCallouts from "markdown-it-obsidian-callouts";
 import JSON5 from "json5";
+import { inspect } from "util";
 import eleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 import tailwindcss from "@tailwindcss/vite";
 import { DateTime } from "luxon";
 import fontAwesomePlugin from "@11ty/font-awesome";
-import { getAllPosts, showInSitemap, tagList } from "./src/_config/collections";
+import {
+  getAllDokumentasiPanduan,
+  getAllPanduanAplikasi,
+  getAllPosts,
+  showInSitemap,
+  tagList,
+} from "./src/_config/collections";
 
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import sitemap from "@quasibit/eleventy-plugin-sitemap";
@@ -23,6 +31,11 @@ export default function (eleventyConfig) {
 
   //	---------------------  Collections
   eleventyConfig.addCollection("allPosts", getAllPosts);
+  eleventyConfig.addCollection("allPanduanAplikasi", getAllPanduanAplikasi);
+  eleventyConfig.addCollection(
+    "allDokumentasiPanduan",
+    getAllDokumentasiPanduan,
+  );
   eleventyConfig.addCollection("showInSitemap", showInSitemap);
   eleventyConfig.addCollection("tagList", tagList);
 
@@ -59,6 +72,24 @@ export default function (eleventyConfig) {
       eleventyConfig.addFilter(name, filter);
     }
   }
+
+  eleventyConfig.addFilter(
+    "debug",
+    (content) =>
+      `<pre rows="100" cols="100" readonly>${inspect(content)}</pre>`,
+  );
+
+  eleventyConfig.addGlobalData("permalink", () => {
+    return (data) => {
+      console.log(data);
+
+      let permalink = data.page.filePathStem.toLowerCase();
+
+      return `${permalink}/index.${data.page.outputFileExtension}`;
+    };
+  });
+
+  eleventyConfig.amendLibrary("md", MarkdownItObsidianCallouts);
 
   return {
     dir: {
