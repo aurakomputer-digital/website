@@ -15,6 +15,8 @@ tags:
 
 Aplikasi E-Gudang adalah solusi digital untuk mengelola persediaan barang dengan prinsip akuntansi yang akurat, transparan, dan real-time.
 
+![Dashboard](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260705234142122.webp)
+
 ---
 
 ## Masalah yang Sering Terjadi di Lapangan
