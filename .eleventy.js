@@ -81,8 +81,6 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addGlobalData("permalink", () => {
     return (data) => {
-      console.log(data);
-
       let permalink = data.page.filePathStem.toLowerCase();
 
       return `${permalink}/index.${data.page.outputFileExtension}`;
