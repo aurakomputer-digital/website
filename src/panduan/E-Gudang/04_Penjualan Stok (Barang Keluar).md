@@ -1,7 +1,7 @@
 ---
 title: "Barang Keluar (Penjualan)"
 description: "Panduan singkat pencatatan transaksi penjualan barang keluar dari gudang"
-group: "Pengenalan Aplikasi"
+group: "Transaksi"
 category: "Admin"
 updated: 2026-07-05
 tags:

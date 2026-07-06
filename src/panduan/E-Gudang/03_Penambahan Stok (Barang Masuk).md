@@ -1,7 +1,7 @@
 ---
 title: "Inisiasi Stok (Barang Masuk)"
 description: "Panduan singkat pencatatan transaksi pembelian barang masuk ke gudang"
-group: "Pengenalan Aplikasi"
+group: "Transaksi"
 category: "Admin"
 updated: 2026-07-05
 tags:

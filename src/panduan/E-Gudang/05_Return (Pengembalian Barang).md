@@ -2,7 +2,7 @@
 title: "Pengembalian Barang (Return)"
 description: "Panduan singkat pencatatan transaksi pengembalian barang dari pembelian dan penjualan"
 group: "Pengenalan Aplikasi"
-category: "Admin"
+category: "Transaksi"
 updated: 2026-07-05
 tags:
   - dokumentasiPanduan
