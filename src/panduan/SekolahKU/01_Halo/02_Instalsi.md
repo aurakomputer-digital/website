@@ -1,6 +1,6 @@
 ---
 layout: doc.njk
-title: Pengenalan Aplikasi SekolahKU
+title: Instalasi Aplikasi SekolahKU
 isSlide: true
 category: Web
 updated: 2026-07-26
