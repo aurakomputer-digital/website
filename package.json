@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^3.0.0",
+    "@marp-team/marp-core": "^4.4.0",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "markdown-it-obsidian-callouts": "^0.3.4"
   }

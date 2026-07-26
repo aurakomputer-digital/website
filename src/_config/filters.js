@@ -1,3 +1,5 @@
+import { Marp } from "@marp-team/marp-core";
+
 /** Converts string to a slug form. */
 export const slugify = (str) => {
   if (!str) return "";
@@ -80,4 +82,25 @@ export function getPanduanFolderCurrentPage(inputPath) {
   // Mengambil bagian pertama sebelum tanda '/' berikutnya
   const app = relativePath.split("/")[0];
   return `./src/panduan/${app}/`;
+}
+
+export function renderMarp(markdownContent) {
+  if (!markdownContent) return "";
+
+  // Instance Marp Core (bisa dikustomisasi opsi-nya)
+  const marp = new Marp({
+    html: true, // Mengizinkan tag HTML di Markdown
+    inlineSVG: true, // Mendukung efek background SVG bawaan Marp
+  });
+
+  // Render content Markdown ke HTML + CSS
+  const { html, css } = marp.render(markdownContent);
+
+  // Kembalikan gabungan CSS dan HTML Slide
+  return `
+      <style>${css}</style>
+      <div class="marp-slide-wrapper">
+        ${html}
+      </div>
+    `;
 }
