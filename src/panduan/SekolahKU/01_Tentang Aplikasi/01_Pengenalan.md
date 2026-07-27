@@ -6,46 +6,49 @@ category: Web
 updated: 2026-07-26
 ---
 
-<!-- marp: true -->
-<!-- header: "SekolahKU" -->
-<!-- footer: "&copy; 2026 - Aura Komputer Digital | https://s.id/aurakomputer" -->
-<!-- style: | -->
-<!--     section { -->
-<!--       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; -->
-<!--       background-color: #f9f9f9; -->
-<!--       color: #333; -->
-<!--     } -->
-<!--     h1 { -->
-<!--       color: #2c3e50; -->
-<!--       border-bottom: 2px solid #2980b9; -->
-<!--       padding-bottom: 10px; -->
-<!--     } -->
-<!--     h2 { -->
-<!--       color: #2980b9; -->
-<!--     } -->
-<!--     section.lead { -->
-<!--       text-align: center; -->
-<!--     } -->
-<!--     section.lead h1 { -->
-<!--       border-bottom: none; -->
-<!--       font-size: 1.5em; -->
-<!--     } -->
-<!--     section.lead h2 { -->
-<!--     } -->
-<!--     ul { -->
-<!--       font-size: 0.9em; -->
-<!--       line-height: 1.6; -->
-<!--     } -->
-<!--     strong { -->
-<!--       color: #2c3e50; -->
-<!--     } -->
-<!---->
+<!--
+marp: true
+footer: "&copy;  Aura Komputer Digital | https://s.id/aurakomputer"
+style: |
+    section {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.5em;
+    }
+    h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #2980b9;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #2980b9;
+    }
+    section.lead {
+      text-align: center;
+    }
+    section.lead h1 {
+      border-bottom: none;
+      font-size: 1.5em;
+    }
+    section.lead h2 {
+    }
+    ul {
+      font-size: 0.9em;
+      line-height: 1.6;
+    }
+    strong {
+      color: #2c3e50;
+    }
+-->
 
 <!-- _class: lead -->
 
 # Berkenalan dengan aplikasi SekolahKU
 
+<center>
+
 ![logo height:200px](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260710160338832.webp)
+
+</center>
 
 ---
 
@@ -125,7 +128,7 @@ Aplikasi SekolahKU dirancang dengan dua komponen utama yang bekerja sinergis unt
 
 ---
 
-## Halaman Panel Pengguna
+# Halaman Panel Pengguna
 
 **Halaman Panel Pengguna** adalah area privat yang aman setelah pengguna login. Dirancang khusus untuk berbagai peran seperti Admin, Guru, Siswa, dan Orang Tua, halaman ini digunakan untuk:
 
@@ -135,3 +138,5 @@ Aplikasi SekolahKU dirancang dengan dua komponen utama yang bekerja sinergis unt
 - **Interaksi Internal:** Menjadi platform komunikasi internal antar warga sekolah.
 
 ![bg right:30% fit](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/aurakom/20260726235900092.png)
+
+---
