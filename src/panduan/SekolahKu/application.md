@@ -10,4 +10,4 @@ features:
   - Responsive
 ---
 
-
+![preview Aplikasi](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260728155238695.webp)
