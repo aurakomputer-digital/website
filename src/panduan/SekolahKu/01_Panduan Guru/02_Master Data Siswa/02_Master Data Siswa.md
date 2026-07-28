@@ -53,9 +53,9 @@ style: |
 
 ---
 
-# Kelebihan Master Data Siswa Aplikasi SekolahKU
+# Kelebihan Master Data Siswa Aplikasi SekolahKu
 
-Aplikasi SekolahKU dirancang dengan arsitektur multi-tahun ajaran. Setiap riwayat akademik dan data pribadi siswa tersimpan dengan aman, rapi, dan terintegrasi secara otomatis pada masing-masing periode tahun ajaran. Tidak ada lagi data yang hilang, tertumpuk, atau tertukar antar periode.
+Aplikasi SekolahKu dirancang dengan arsitektur multi-tahun ajaran. Setiap riwayat akademik dan data pribadi siswa tersimpan dengan aman, rapi, dan terintegrasi secara otomatis pada masing-masing periode tahun ajaran. Tidak ada lagi data yang hilang, tertumpuk, atau tertukar antar periode.
 
 ---
 

@@ -40,7 +40,7 @@ export const docsTree = (collectionApi) => {
 
   allDocs.forEach((item) => {
     // Ambil path relatif dari folder panduan
-    // Contoh: "SekolahKU/01_Panduan Guru/01_Tentang Aplikasi/01_Pengenalan.md"
+    // Contoh: "SekolahKu/01_Panduan Guru/01_Tentang Aplikasi/01_Pengenalan.md"
     const relativePath = path.relative("src/panduan", item.inputPath);
     const parts = relativePath.split(path.sep);
 

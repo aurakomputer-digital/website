@@ -115,3 +115,6 @@ export function renderMarp(markdownContent) {
       </div>
     `;
 }
+
+export const debug = (content) =>
+  `<pre rows="100" cols="100" readonly>${inspect(content)}</pre>`;
