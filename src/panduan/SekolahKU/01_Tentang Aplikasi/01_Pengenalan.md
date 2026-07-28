@@ -60,6 +60,20 @@ Aplikasi Sekolahku adalah sebuah platform sistem informasi dan aplikasi pelayana
 
 ---
 
+# Contoh Kasus Penggunaan Aplikasi SekolahKU
+
+## Master data siswa
+
+Aplikasi sekolahku menyediakan pengelolaan data siswa secara GRATIS tanpa di pungut biaya, dengan fitur meliputi:
+
+- Penyimpanan database siswa detail lengkap dan unlimited penyimpanan
+- Multi kelas dan tahun ajaran
+- Aktifitas data kenaikan kelas persiswa
+- Aktifitas Mutasi data siswa
+- Data Pengumuman dan kelulusan Siswa
+
+---
+
 # Visi SekolahKu
 
 Menjadi platform digital terdepan yang memberdayakan setiap sekolah di Indonesia untuk bertransformasi, berinovasi, dan memberikan pendidikan berkualitas internasional.
@@ -138,5 +152,3 @@ Aplikasi SekolahKU dirancang dengan dua komponen utama yang bekerja sinergis unt
 - **Interaksi Internal:** Menjadi platform komunikasi internal antar warga sekolah.
 
 ![bg right:30% fit](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/aurakom/20260726235900092.png)
-
----
