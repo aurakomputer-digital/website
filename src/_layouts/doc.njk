@@ -53,29 +53,97 @@ layout: base.njk
         </button>
       </div>
 
-      <nav class="sidebar-nav">
-        {% set currentAppFolder = page.inputPath | getPanduanFolderCurrentPage
-        %} {% set items = collections.allDokumentasiPanduan |
-        filterByIncludes("inputPath", currentAppFolder) %}
-
-        <ul class="nav-items-list">
-          {% for item in items %}
-          <li>
-            <a
-              href="{{ item.url }}"
-              class="nav-item {% if item.url == page.url %}active{% endif %}"
-              data-title="{{ item.data.title | lower }}"
+      {# Macro Rekursif untuk merender Folder & File dalam bentuk Tree #} {%
+      macro renderTree(node, pageUrl) %}
+      <ul class="space-y-1 pl-3 border-l border-slate-200 text-xs">
+        {# 1. Render Sub-folder (Directory) #} {% for key, val in node %} {% if
+        key != "_files" and key != "_name" %}
+        <li class="my-1">
+          <details open class="group">
+            <summary
+              class="flex items-center justify-between cursor-pointer py-1.5 px-2 text-slate-700 font-medium hover:text-brand-600 rounded-md transition-colors select-none"
             >
-              <span class="nav-item-text">{{ item.data.title }}</span>
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
+              <span class="flex items-center gap-2">
+                {# Folder Icon #}
+                <svg
+                  class="w-4 h-4 text-amber-500 group-open:hidden"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+                  />
+                </svg>
+                <svg
+                  class="w-4 h-4 text-amber-500 hidden group-open:block"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z"
+                  />
+                </svg>
+                <span>{{ val._name }}</span>
+              </span>
+              {# Arrow Icon #}
+              <svg
+                class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200 group-open:rotate-90"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </summary>
 
-        <div id="emptyNavState" class="hidden text-center py-8 px-4">
-          <div class="text-3xl mb-2">🔍</div>
-          <p class="text-xs text-slate-500">Tidak ditemukan</p>
-        </div>
+            {# Panggil macro lagi secara rekursif untuk kedalaman folder
+            berikutnya #}
+            <div class="mt-1">{{ renderTree(val, pageUrl) }}</div>
+          </details>
+        </li>
+        {% endif %} {% endfor %} {# 2. Render File Markdown #} {% if node._files
+        and node._files.length > 0 %} {% for file in node._files %}
+        <li>
+          <a
+            href="{{ file.url }}"
+            class="flex items-center gap-2 py-1.5 px-2 rounded-md transition-colors text-slate-600 hover:text-brand-600 hover:bg-slate-100/80 {% if pageUrl == file.url %} active font-semibold text-brand-600 bg-brand-50/80 {% endif %}"
+          >
+            {# File Icon #}
+            <svg
+              class="w-3.5 h-3.5 text-slate-400 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            <span class="truncate">{{ file.title }}</span>
+          </a>
+        </li>
+        {% endfor %} {% endif %}
+      </ul>
+      {% endmacro %} {# Panggil Macro di Sidebar #}
+      <nav class="docs-tree-navigation py-4 px-2">
+        {% set currentAppName = page.inputPath | getAppFolderCurrentPage %} {{
+        renderTree(collections.docsTree[currentAppName], page.url) }}
       </nav>
     </div>
   </aside>

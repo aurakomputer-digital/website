@@ -3,19 +3,13 @@ import JSON5 from "json5";
 import { inspect } from "util";
 import eleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 import tailwindcss from "@tailwindcss/vite";
-import { DateTime } from "luxon";
 import fontAwesomePlugin from "@11ty/font-awesome";
-import {
-  getAllDokumentasiPanduan,
-  getAllPanduanAplikasi,
-  getAllPosts,
-  showInSitemap,
-  tagList,
-} from "./src/_config/collections";
+
+import * as filters from "./src/_config/filters.js";
+import * as collections from "./src/_config/collections.js";
 
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import sitemap from "@quasibit/eleventy-plugin-sitemap";
-import * as filters from "./src/_config/filters";
 
 export default function (eleventyConfig) {
   eleventyConfig.addDataExtension("json5", (contents) => JSON5.parse(contents));
@@ -30,14 +24,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("tags", "tags.njk");
 
   //	---------------------  Collections
-  eleventyConfig.addCollection("allPosts", getAllPosts);
-  eleventyConfig.addCollection("allPanduanAplikasi", getAllPanduanAplikasi);
-  eleventyConfig.addCollection(
-    "allDokumentasiPanduan",
-    getAllDokumentasiPanduan,
-  );
-  eleventyConfig.addCollection("showInSitemap", showInSitemap);
-  eleventyConfig.addCollection("tagList", tagList);
+  for (const [name, filter] of Object.entries(collections)) {
+    if (typeof filter === "function") {
+      eleventyConfig.addCollection(name, filter);
+    }
+  }
 
   eleventyConfig.addPassthroughCopy("src/assets/img");
   eleventyConfig.addPassthroughCopy("src/assets/css/main.css");
