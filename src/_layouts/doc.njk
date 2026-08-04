@@ -2,7 +2,7 @@
 layout: base.njk
 ---
 
-<div class="docs-layout">
+<div class="docs-layout bg-white">
   <aside class="docs-sidebar" id="docsSidebar">
     <div class="docs-sidebar-inner">
       <div class="sidebar-header">
@@ -299,7 +299,7 @@ layout: base.njk
         </header>
 
         {% if isSlide or type == "slide" %}
-        <div class="marp-slides-container">
+        <div class="marp-slides-container prose-vite">
           {{ page.rawInput | renderMarp | safe }}
         </div>
         {% else %}
