@@ -40,19 +40,9 @@ style: |
     }
 -->
 
-<!-- _class: lead -->
-
-# Berkenalan dengan aplikasi SekolahKu
-
-<center>
+# Apa itu aplikasi SekolahKu ?
 
 ![logo height:200px](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260710160338832.webp)
-
-</center>
-
----
-
-# Apa itu aplikasi SekolahKu ?
 
 Aplikasi Sekolahku adalah sebuah platform sistem informasi dan aplikasi pelayanan sekolah yang di desain untuk menyikapi **tuntutan perubahan yang mengarah pada otomasi dan digitalisasi layanan sekolah**, dengan mengedepankan system database terpusat
 

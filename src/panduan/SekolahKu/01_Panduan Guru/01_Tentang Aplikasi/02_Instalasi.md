@@ -40,18 +40,6 @@ style: |
     }
 -->
 
-<!-- _class: lead -->
-
-# Cara Install Aplikasi SekolahKu
-
-<center>
-
-![logo height:200px](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260710160338832.webp)
-
-</center>
-
----
-
 # Coba Demo Gratis
 
 Anda dapat mencoba menjalankan demo aplikasi dengan informasi terbaru di halaman awal beranda aplikasi SekolahKu.

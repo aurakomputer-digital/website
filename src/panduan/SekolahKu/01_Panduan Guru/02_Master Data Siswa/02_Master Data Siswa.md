@@ -41,18 +41,6 @@ style: |
     }
 -->
 
-<!-- _class: lead -->
-
-# Pengelolaan Data Siswa
-
-<center>
-
-![logo height:200px](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260710160338832.webp)
-
-</center>
-
----
-
 # Kelebihan Master Data Siswa Aplikasi SekolahKu
 
 Aplikasi SekolahKu dirancang dengan arsitektur multi-tahun ajaran. Setiap riwayat akademik dan data pribadi siswa tersimpan dengan aman, rapi, dan terintegrasi secara otomatis pada masing-masing periode tahun ajaran. Tidak ada lagi data yang hilang, tertumpuk, atau tertukar antar periode.

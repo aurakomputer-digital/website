@@ -41,18 +41,6 @@ style: |
     }
 -->
 
-<!-- _class: lead -->
-
-# Mutasi Data Siswa
-
-<center>
-
-![logo height:200px](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260710160338832.webp)
-
-</center>
-
----
-
 # Apa itu Mutasi Data Siswa?
 
 Mutasi Data Siswa adalah proses perubahan data siswa yang dibuat secara manual. untuk siswa yang mengundurkan diri, pindah sekolah, siswa bermasalah, dikeluarkan dan lain - lain

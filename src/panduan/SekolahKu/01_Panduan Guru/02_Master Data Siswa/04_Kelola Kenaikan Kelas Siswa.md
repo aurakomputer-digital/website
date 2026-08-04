@@ -41,18 +41,6 @@ style: |
     }
 -->
 
-<!-- _class: lead -->
-
-# Kenaikan Kelas Siswa
-
-<center>
-
-![logo height:200px](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260710160338832.webp)
-
-</center>
-
----
-
 # Apa itu kenaikan kelas siswa?
 
 Menu fitur kenaikan/pindah kelas siswa adalah salah satu fitur yang terdapat dalam aplikasi manajemen sekolah. Fitur ini digunakan untuk mengelola data dan informasi siswa yang akan mengalami kenaikan dari kelas satu ke kelas yang lebih tinggi, atau pindah dari satu kelas ke kelas yang lainnya.

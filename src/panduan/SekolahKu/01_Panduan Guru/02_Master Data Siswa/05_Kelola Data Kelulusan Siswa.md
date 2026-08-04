@@ -42,18 +42,6 @@ style: |
     }
 -->
 
-<!-- _class: lead -->
-
-# Management Data Kelulusan Siswa
-
-<center>
-
-![logo height:200px](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260710160338832.webp)
-
-</center>
-
----
-
 # Apa itu Fitur Kelulusan Siswa?
 
 Fitur **Kelulusan Siswa** adalah modul khusus untuk memproses siswa tingkat akhir yang telah menyelesaikan masa studi.
