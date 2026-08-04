@@ -43,8 +43,14 @@ style: |
 
 # Persiapan Master Data
 
-Untuk mengelola aktivitas harian guru, ada beberapa data yang perlu diisikan yaitu:
+Untuk memastikan akurasi pelaporan aktivitas harian, sistem memerlukan standarisasi data awal sebagai berikut:
 
-1. **Daftar Guru**
-1. Daftar Kegiatan
-1. Daftar Mata Pelajaran
+1.  **Manajemen Profil Pendidik (Daftar Guru)**
+    - Pengelolaan data identitas (NIP/NUPTK), pangkat/golongan, dan status kepegawaian.
+    - Pemetaan jabatan (Guru Kelas, Guru Bidang Studi, atau Tugas Tambahan seperti Wali Kelas/Kepala Lab).
+
+2.  **Katalog Aktivitas & Indikator Kinerja (Daftar Kegiatan)**
+    - Klasifikasi kegiatan menjadi: Tatap Muka (KBM), Administrasi Akademik, dan Pengembangan Diri.
+
+3.  **Pemetaan Kurikulum & Beban Ajar (Daftar Mata Pelajaran)**
+    - Pengaturan mata pelajaran berdasarkan kurikulum yang berlaku (Kurikulum Merdeka/K-13).
