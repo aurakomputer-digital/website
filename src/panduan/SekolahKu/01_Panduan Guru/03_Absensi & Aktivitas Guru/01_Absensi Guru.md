@@ -13,7 +13,7 @@ footer: "&copy; Aura Komputer Digital | https://s.id/aurakomputer"
 style: |
     section {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 1.1em;
+      font-size: 1.5em;
     }
     h1 {
       color: #2c3e50;
@@ -101,25 +101,8 @@ Sistem menyediakan formulir digital yang lengkap dan fleksibel untuk mendokument
 | **Kategori Kegiatan**   | KBM, Ibadah, Rapat, Pengembangan Diri, Ekskul, dll. |
 | **Deskripsi Aktivitas** | Rincian materi atau tujuan kegiatan                 |
 | **Durasi**              | Lama waktu pelaksanaan                              |
-| **Catatan Tambahan**    | Lokasi, jumlah peserta, atau lampiran foto          |
 
-![bg right:35% fit](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260728110522441.webp)
-
----
-
-# Panduan Praktis: Untuk Guru & Admin
-
-Berikut adalah langkah mudah untuk mencatat aktivitas harian dalam sistem:
-
-1. **Buka Modul:**
-   Masuk ke menu **Absensi Guru** pada dashboard aplikasi.
-2. **Inisiasi Pencatatan:**
-   Klik tombol **<span class="highlight">+ Tambah Absensi</span>** pada halaman riwayat absensi.
-3. **Isi Detail Aktivitas:**
-   - Pilih **Jenis Kegiatan** (misal: KBM, Shalat Duha, Rapat Dewan Guru).
-   - Lengkapi deskripsi, durasi, dan catatan pendukung.
-4. **Simpan Data:**
-   Klik **Simpan**. Data akan langsung tersinkronisasi dan dapat dipantau oleh pihak berwenang secara _real-time_.
+![bg right:30% fit](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/picgo_nobg_out.webp)
 
 ---
 
@@ -134,26 +117,8 @@ Dengan implementasi modul ini, sekolah akan mendapatkan:
 
 ---
 
-<!-- _class: lead -->
-
 # Kesimpulan
 
 > _"Absensi yang baik bukan tentang mengawasi, tetapi tentang mendukung guru untuk bekerja lebih terstruktur dan terukur."_
 
 Modul Absensi Guru SekolahKU hadir untuk menjawab tantangan tersebut, mengubah data kehadiran menjadi **insight berharga** bagi kemajuan sekolah.
-
----
-
-<!-- _class: lead -->
-
-# Terima Kasih
-
-### Ada Pertanyaan?
-
-<center>
-
-**Tim Pengembangan Sistem Informasi SekolahKU**
-&copy; 2026 Aura Komputer Digital
-https://s.id/aurakomputer
-
-</center>
