@@ -41,20 +41,6 @@ style: |
     }
 -->
 
-<!-- _class: lead -->
-
-# Master Data Tahun Ajaran, Kelas dan Penjurusan
-
-### Fondasi Pengelolaan Data Siswa yang Kuat
-
-<center>
-
-![logo height:200px](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260710160338832.webp)
-
-</center>
-
----
-
 # Tujuan Pembelajaran
 
 Setelah mempelajari modul ini, Anda akan mampu:
@@ -340,7 +326,6 @@ Setiap data kelas harus memuat:
 - Gunakan standar penamaan yang konsisten
 - Dokumentasikan perubahan penting
 - Test import dengan data kecil dulu
-
 
 ![bg right:40%](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260728100956437.webp)
 

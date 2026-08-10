@@ -1,6 +1,6 @@
 ---
 layout: doc.njk
-title: Panduan Instalasi SekolahKU
+title: Panduan Instalasi SekolahKu
 isSlide: true
 category: Web
 updated: 2026-07-27
@@ -40,21 +40,9 @@ style: |
     }
 -->
 
-<!-- _class: lead -->
-
-# Cara Install Aplikasi SekolahKU
-
-<center>
-
-![logo height:200px](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260710160338832.webp)
-
-</center>
-
----
-
 # Coba Demo Gratis
 
-Anda dapat mencoba menjalankan demo aplikasi dengan informasi terbaru di halaman awal beranda aplikasi SekolahKU.
+Anda dapat mencoba menjalankan demo aplikasi dengan informasi terbaru di halaman awal beranda aplikasi SekolahKu.
 
 - **Tanpa Biaya:** Jelajahi fitur secara gratis.
 - **Update Berkala:** Informasi fitur terbaru selalu tersedia.

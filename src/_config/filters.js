@@ -84,6 +84,17 @@ export function getPanduanFolderCurrentPage(inputPath) {
   return `./src/panduan/${app}/`;
 }
 
+export function getAppFolderCurrentPage(inputPath) {
+  if (!inputPath) return "";
+
+  // Menghapus './src/panduan/' di awal path
+  const relativePath = inputPath.replace(/^\.\/src\/panduan\//, "");
+
+  // Mengambil bagian pertama sebelum tanda '/' berikutnya
+  const app = relativePath.split("/")[0];
+  return app;
+}
+
 export function renderMarp(markdownContent) {
   if (!markdownContent) return "";
 
@@ -104,3 +115,6 @@ export function renderMarp(markdownContent) {
       </div>
     `;
 }
+
+export const debug = (content) =>
+  `<pre rows="100" cols="100" readonly>${inspect(content)}</pre>`;

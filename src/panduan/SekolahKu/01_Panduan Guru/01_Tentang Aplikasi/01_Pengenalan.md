@@ -1,6 +1,6 @@
 ---
 layout: doc.njk
-title: Pengenalan Aplikasi SekolahKU
+title: Pengenalan Aplikasi SekolahKu
 isSlide: true
 category: Web
 updated: 2026-07-26
@@ -40,19 +40,9 @@ style: |
     }
 -->
 
-<!-- _class: lead -->
-
-# Berkenalan dengan aplikasi SekolahKU
-
-<center>
+# Apa itu aplikasi SekolahKu ?
 
 ![logo height:200px](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260710160338832.webp)
-
-</center>
-
----
-
-# Apa itu aplikasi SekolahKu ?
 
 Aplikasi Sekolahku adalah sebuah platform sistem informasi dan aplikasi pelayanan sekolah yang di desain untuk menyikapi **tuntutan perubahan yang mengarah pada otomasi dan digitalisasi layanan sekolah**, dengan mengedepankan system database terpusat
 
@@ -60,7 +50,7 @@ Aplikasi Sekolahku adalah sebuah platform sistem informasi dan aplikasi pelayana
 
 ---
 
-# Contoh Kasus Penggunaan Aplikasi SekolahKU
+# Contoh Kasus Penggunaan Aplikasi SekolahKu
 
 ## Master data siswa
 
@@ -80,7 +70,7 @@ Menjadi platform digital terdepan yang memberdayakan setiap sekolah di Indonesia
 
 ---
 
-# Misi SekolahKU
+# Misi SekolahKu
 
 1.  **Modernisasi Administrasi:** Menyederhanakan dan mengotomatiskan manajemen sekolah, membebaskan waktu guru dan staf untuk lebih fokus pada pengembangan siswa.
 2.  **Meningkatkan Kolaborasi:** Menjembatani komunikasi yang efektif dan transparan antara sekolah, siswa, dan orang tua dalam satu platform terintegrasi.
@@ -89,9 +79,9 @@ Menjadi platform digital terdepan yang memberdayakan setiap sekolah di Indonesia
 
 ---
 
-# Arsitektur SekolahKU: Cepat, Andal, dan Inovatif
+# Arsitektur SekolahKu: Cepat, Andal, dan Inovatif
 
-Aplikasi **SekolahKU** dirancang dengan fondasi teknologi modern untuk memberikan pengalaman pengguna terbaik, skalabilitas, dan kemudahan pemeliharaan. Kami memadukan dua framework terbaik di kelasnya: **Laravel** untuk backend dan **Vue.js** untuk frontend.
+Aplikasi **SekolahKu** dirancang dengan fondasi teknologi modern untuk memberikan pengalaman pengguna terbaik, skalabilitas, dan kemudahan pemeliharaan. Kami memadukan dua framework terbaik di kelasnya: **Laravel** untuk backend dan **Vue.js** untuk frontend.
 
 <div class="flex gap-10">
 
@@ -114,7 +104,7 @@ Kombinasi ini memungkinkan kami membangun aplikasi yang **cepat, aman, dan dinam
 
 # Konsep Arsitektur
 
-SekolahKU mengadopsi arsitektur **Single Page Application (SPA)**. Artinya, aplikasi hanya memuat satu halaman utama sekali saja. Setelah itu, semua navigasi dan interaksi terjadi secara dinamis tanpa perlu memuat ulang seluruh halaman.
+SekolahKu mengadopsi arsitektur **Single Page Application (SPA)**. Artinya, aplikasi hanya memuat satu halaman utama sekali saja. Setelah itu, semua navigasi dan interaksi terjadi secara dinamis tanpa perlu memuat ulang seluruh halaman.
 
 **Keuntungannya:**
 
@@ -126,7 +116,7 @@ SekolahKU mengadopsi arsitektur **Single Page Application (SPA)**. Artinya, apli
 
 # Kerangka Utama Aplikasi
 
-Aplikasi SekolahKU dirancang dengan dua komponen utama yang bekerja sinergis untuk memberikan fungsionalitas yang lengkap dan pengalaman pengguna yang optimal.
+Aplikasi SekolahKu dirancang dengan dua komponen utama yang bekerja sinergis untuk memberikan fungsionalitas yang lengkap dan pengalaman pengguna yang optimal.
 
 ---
 

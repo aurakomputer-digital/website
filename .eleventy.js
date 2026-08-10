@@ -1,21 +1,31 @@
 import MarkdownItObsidianCallouts from "markdown-it-obsidian-callouts";
 import JSON5 from "json5";
-import { inspect } from "util";
 import eleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 import tailwindcss from "@tailwindcss/vite";
-import { DateTime } from "luxon";
 import fontAwesomePlugin from "@11ty/font-awesome";
-import {
-  getAllDokumentasiPanduan,
-  getAllPanduanAplikasi,
-  getAllPosts,
-  showInSitemap,
-  tagList,
-} from "./src/_config/collections";
+
+import * as filters from "./src/_config/filters.js";
+import * as collections from "./src/_config/collections.js";
 
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import sitemap from "@quasibit/eleventy-plugin-sitemap";
-import * as filters from "./src/_config/filters";
+
+function cleanSlugify(filePathStem) {
+  return filePathStem
+    .split("/")
+    .map((part) => {
+      // 1. Hapus prefix angka & underscore di awal (misal "01_Panduan Guru" -> "Panduan Guru")
+      const cleaned = part.replace(/^\d+_\s*/, "");
+
+      // 2. Ubah menjadi slug (huruf kecil, ganti spasi/karakter non-alphanumeric dengan '-')
+      return cleaned
+        .toLowerCase()
+        .replace(/[^a-z0-9 -]/g, "") // Hapus karakter khusus
+        .replace(/\s+/g, "-") // Ganti spasi dengan -
+        .replace(/-+/g, "-"); // Hapus strip berulang
+    })
+    .join("/");
+}
 
 export default function (eleventyConfig) {
   eleventyConfig.addDataExtension("json5", (contents) => JSON5.parse(contents));
@@ -30,14 +40,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("tags", "tags.njk");
 
   //	---------------------  Collections
-  eleventyConfig.addCollection("allPosts", getAllPosts);
-  eleventyConfig.addCollection("allPanduanAplikasi", getAllPanduanAplikasi);
-  eleventyConfig.addCollection(
-    "allDokumentasiPanduan",
-    getAllDokumentasiPanduan,
-  );
-  eleventyConfig.addCollection("showInSitemap", showInSitemap);
-  eleventyConfig.addCollection("tagList", tagList);
+  for (const [name, filter] of Object.entries(collections)) {
+    if (typeof filter === "function") {
+      eleventyConfig.addCollection(name, filter);
+    }
+  }
 
   eleventyConfig.addPassthroughCopy("src/assets/img");
   eleventyConfig.addPassthroughCopy("src/assets/css/main.css");
@@ -73,18 +80,22 @@ export default function (eleventyConfig) {
     }
   }
 
-  eleventyConfig.addFilter(
-    "debug",
-    (content) =>
-      `<pre rows="100" cols="100" readonly>${inspect(content)}</pre>`,
-  );
+  eleventyConfig.addGlobalData("eleventyComputed", {
+    permalink: (data) => {
+      if (data.permalink) {
+        return data.permalink;
+      }
 
-  eleventyConfig.addGlobalData("permalink", () => {
-    return (data) => {
-      let permalink = data.page.filePathStem.toLowerCase();
+      if (
+        data.page.inputPath &&
+        data.page.inputPath.startsWith("./src/panduan/")
+      ) {
+        const cleanPath = cleanSlugify(data.page.filePathStem);
+        return `${cleanPath}/index.html`;
+      }
 
-      return `${permalink}/index.${data.page.outputFileExtension}`;
-    };
+      return data.page.filePathStem + "/index.html";
+    },
   });
 
   eleventyConfig.amendLibrary("md", MarkdownItObsidianCallouts);
