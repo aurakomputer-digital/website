@@ -101,8 +101,8 @@ Sistem menyediakan formulir digital yang lengkap dan fleksibel untuk mendokument
 | **Kategori Kegiatan**   | KBM, Ibadah, Rapat, Pengembangan Diri, Ekskul, dll. |
 | **Deskripsi Aktivitas** | Rincian materi atau tujuan kegiatan                 |
 | **Durasi**              | Lama waktu pelaksanaan                              |
-
-![bg right:30% fit](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/picgo_nobg_out.webp)
+- [ ] 
+![bg right:30% fit](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260810161032283.webp)
 
 ---
 

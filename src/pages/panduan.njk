@@ -11,8 +11,8 @@ keywords:
 permalink: /panduan/
 ---
 
-{% set docs = collections.allDokumentasiPanduan %}
-{% set apps = collections.allPanduanAplikasi %}
+{% set docs = collections.allDokumentasiPanduan %} {% set apps =
+collections.allPanduanAplikasi %}
 
 <!-- HERO SECTION -->
 <section class="relative pt-32 lg:pt-40 pb-16 hero-bg overflow-hidden">
@@ -172,12 +172,10 @@ permalink: /panduan/
       class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
       id="appsGrid"
     >
-      {% for app in apps %}
-
-      {% set firstDoc = collections.allDokumentasiPanduan | filterByIncludes("inputPath", app.template.parsed.dir) | first %}
+      {% for app in apps %} {% set firstDoc = collections.allDokumentasiPanduan
+      | filterByIncludes("inputPath", app.template.parsed.dir) | first %}
       <a
         href="{{ firstDoc.page.url }}"
-        target="_blank"
         rel="noopener noreferrer"
         data-category="{{ app.data.category }}"
         data-name="{{ app.data.title | lower }}"

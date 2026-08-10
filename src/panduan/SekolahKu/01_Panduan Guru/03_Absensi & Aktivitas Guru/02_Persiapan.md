@@ -13,7 +13,7 @@ footer: "&copy;  Aura Komputer Digital | https://s.id/aurakomputer"
 style: |
     section {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 1.2em;
+      font-size: 1.5em;
     }
     h1 {
       color: #2c3e50;
@@ -54,3 +54,11 @@ Untuk memastikan akurasi pelaporan aktivitas harian, sistem memerlukan standaris
 
 3.  **Pemetaan Kurikulum & Beban Ajar (Daftar Mata Pelajaran)**
     - Pengaturan mata pelajaran berdasarkan kurikulum yang berlaku (Kurikulum Merdeka/K-13).
+
+---
+
+# Persiapan Perijinan Pengguna
+
+Untuk dapat **mengakses menu dan menginput** data _absensi guru_ perlu di lakukan penyesuaian _role_ dengan mencentang perijinan berikut:
+
+![bg right:30% fit](https://raw.githubusercontent.com/aurakomputer-digital/obsidian-assets/main/20260810160944608.webp)
